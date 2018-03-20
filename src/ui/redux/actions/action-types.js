@@ -1,0 +1,3 @@
+export const DATA_LOADING = 'DATA_LOADING';
+export const DATA_SUCCESSFULL = 'DATA_SUCCESSFULL';
+export const DATA_FAILED = 'DATA_FAILED';
