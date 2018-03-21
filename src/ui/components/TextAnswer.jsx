@@ -81,9 +81,9 @@ class TextAnswer extends React.Component {
 
 TextAnswer.propTypes = {
   answer: PropTypes.string.isRequired,
-  handleAnswerClick: PropTypes.string.isRequired,
+  handleAnswerClick: PropTypes.func.isRequired,
   trueAnswer: PropTypes.string.isRequired,
-  userResponse: PropTypes.string.isRequired
+  userResponse: PropTypes.string
 };
 
 export default TextAnswer;

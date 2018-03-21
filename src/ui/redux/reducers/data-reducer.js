@@ -12,7 +12,7 @@ const shuffle = arr => {
 };
 
 const defaultState = {
-  data: null,
+  data: [],
   dataLoading: false,
   error: null
 };

@@ -45,7 +45,7 @@ class TextQuestion extends React.Component {
   }
 
   render() {
-    const { category, answers, solution, question, trueAnswer } = this.props;
+    const { category, answers, solution, question, trueAnswer, handleNextClick } = this.props;
     return (
       <Wrapper>
         <h5>{category}</h5>
@@ -72,7 +72,7 @@ class TextQuestion extends React.Component {
           )}
           {this.state.userResponse && (
             <Buttons>
-              <button>Next</button>
+              <button onClick={handleNextClick}>Next</button>
             </Buttons>
           )}
         </Question>
@@ -86,7 +86,8 @@ TextQuestion.propTypes = {
   category: PropTypes.string.isRequired,
   answers: PropTypes.arrayOf(PropTypes.string).isRequired,
   trueAnswer: PropTypes.string.isRequired,
-  solution: PropTypes.string.isRequired
+  solution: PropTypes.string.isRequired,
+  handleNextClick: PropTypes.func.isRequired
 };
 
 export default TextQuestion;

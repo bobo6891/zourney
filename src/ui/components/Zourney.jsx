@@ -15,14 +15,23 @@ export class Zourney extends React.Component {
     super(props);
 
     this.handleResize = this.handleResize.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
     this.state = {
-      data: null,
-      screen: 'destkop'
+      data: [],
+      screen: 'destkop',
+      passedQuestions: []
     };
   }
 
   componentDidMount() {
     this.props.actions.loadData();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('componentWillReceiveProps', nextProps);
+    this.setState({
+      data: nextProps.data.data
+    });
   }
 
   handleResize(width) {
@@ -37,16 +46,22 @@ export class Zourney extends React.Component {
     this.setState({ screen: 'desktop' });
   }
 
+  handleNextClick(e) {
+    this.setState({
+      data: this.state.data.slice(1)
+    });
+  }
+
   render() {
-    if (!this.props.data.data) {
+    if (!this.state.data.length) {
       return null;
     }
 
+    const [item] = this.state.data
+
     return (
       <div>
-        {this.props.data.data.map(item => (
-          <TextQuestion key={item.question} {...item} />
-        ))}
+        <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
       </div>
     );
   }
