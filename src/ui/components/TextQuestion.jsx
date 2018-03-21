@@ -25,7 +25,7 @@ const Answers = styled.div`
 
 const Buttons = styled.div`
   margin-top: 16px;
-  text-align: right;
+  text-align: center;
 `;
 
 class TextQuestion extends React.Component {
@@ -64,9 +64,9 @@ class TextQuestion extends React.Component {
               />
             ))}
           </Answers>
-          {this.state.correctAnswered === false && (
+          {this.state.correctAnswered !== null && (
             <div>
-              <h6>You stupid! You choosed the wrong answer!</h6>
+              <h6>Explantation</h6>
               <p>{solution}</p>
             </div>
           )}

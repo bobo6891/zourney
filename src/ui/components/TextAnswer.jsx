@@ -9,6 +9,7 @@ const Answer = styled.div`
   background-color: #e2e2e2;
   margin-top: 8px;
   margin-bottom: 8px;
+  width: 100%;
   
   &:hover {
     background-color: #c4c4c4;
@@ -24,11 +25,12 @@ const Answer = styled.div`
   }
 
   &.correct {
-    background-color: rgb(219, 239, 220);;
+    background-color: rgb(219, 239, 220);
     color: rgb(40, 91, 42);
 
+
     &:hover {
-      background-color: rgb(219, 239, 220);;
+      background-color: rgb(219, 239, 220);
       color: rgb(40, 91, 42);
       cursor: default;
     }
@@ -44,6 +46,11 @@ const Answer = styled.div`
       cursor: default;
     }
   }
+
+  &.fade-out {
+    opacity: 0;
+    transition: opacity 1s 1s ease;
+  }
 `;
 
 class TextAnswer extends React.Component {
@@ -51,30 +58,50 @@ class TextAnswer extends React.Component {
     super(props);
 
     this.state = {
-      correctAnswered: null
+      className: null,
+      display: true
     };
   }
 
   componentWillReceiveProps({answer, trueAnswer, userResponse}) {
-    const newState = {};
-    
-    if (answer === userResponse) {
-      newState.correctAnswered = userResponse === trueAnswer ? 'correct' : 'wrong'
-    } else {
-      newState.correctAnswered = '';
+    let delayTransition = 500;
+    if (userResponse === trueAnswer) {
+      delayTransition = 0;
+    }
+    if (userResponse === answer && trueAnswer !== answer) {
+      this.setState({className: 'wrong '});
+      setTimeout(() => {
+        this.setState({className: 'fadeOut animated'});
+        setTimeout(() => {
+          this.setState({display: false});
+        }, 1000);
+      }, delayTransition)
+      
+      return;
     }
 
-    if (answer === trueAnswer) {
-      newState.correctAnswered = 'correct';
+    if (trueAnswer !== answer) {
+      setTimeout(() => {
+        this.setState({className: 'fadeOut animated'});
+        setTimeout(() => {
+          this.setState({display: false});
+        }, 1000);
+      }, delayTransition);
+      return;
     }
 
-    this.setState(newState);
+    if (trueAnswer === answer) {
+      this.setState({className: 'correct'});
+    }
   }
 
   render() {
     const { handleAnswerClick, answer } = this.props;
+    if (!this.state.display) {
+      return null;
+    }
     return (
-      <Answer className={this.state.correctAnswered} onClick={handleAnswerClick}>{answer}</Answer>
+      <Answer className={this.state.className} onClick={handleAnswerClick}>{answer}</Answer>
     );
   }
 }

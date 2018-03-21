@@ -37,6 +37,7 @@ const ajaxCall = () => {
         console.log(err);
         return;
       }
+      console.log(res.body.length);
       writeAndReturn(res.body);
     });
 };
