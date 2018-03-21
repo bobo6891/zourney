@@ -1,20 +1,60 @@
 # Zourney
 
-We are **truly international**, right? How many of you have moved to Berlin (or any other office of ours) for a new role?
+So you are going to relocate to Berlin and start working at Zalando. But you don't know how things work in Berlin. How do you find a flat? What kind of paperwork do you need to get done? Where are the best places to party?
 
-I know we are good with the support we provide before you join. Did you really understand what you are getting yourself into? Did you find it easy to navigate the zillion pages online about "where should I live in Berlin?" or "how do I register for my TAX ID?” or “what is truly important to understand about Zalando’s culture?”
+Don't worry, our little pre-boarding [quiz game](https://tlossen.github.io/zourney/) will teach you the basics.
 
-We pride ourselves for being a truly international company and we have superb mechanisms in place for contract creation, VISA support, heck, even working with an external agency which is our candidates' "concierge service" (sometimes). But do our candidates really feel connected to Zalando before they step into our "Welcome Day"? Or do they wait for the job to start and then maybe realise it is not right for them...(and then that bad attrition comes and spoils it all :( )
+## Concept
 
-Game meet Pre-Boarding! Have you ever seen a career page where you can navigate your way through "what can i expect from this country / city / company"?
+https://ideas.zalando.net/projects/a7ff770e-f054-4420-a38c-3508e128e1fb
 
-I did not.
+## Contributing
 
-Do you want to play a game? Move up from level to level, have fun, learn, get your paperwork done, understand, become confident and more importantly EXCITED about starting your work at Zalando.
+Please [help us](CONTRIBUTING.md) to improve the game!
 
-The idea of this project is to link to our gorgeous career page a game to support their pre-boarding.
+## Development
 
-### License
+### Dependencies
+
+__System dependencies__
+- [node 8.9.4](https://nodejs.org/en/download/package-manager/)
+
+__Node dependencies__
+`npm install`
+
+### Development environment
+
+Running as dev mode
+`npm run dev`
+
+### Linting
+Running linting
+`npm run lint`
+
+### Testing (not in place yet)
+`npm run test`
+
+### Building the application
+Building frontend and backend
+`npm run build`
+
+Building only frontend
+`npm run build-frontend`
+
+Building only backend
+`npm run build-backend`
+
+You can find the built source code dist directory.
+
+### Staging & Production environment
+To run the application on production mode you have expose `ENV` variable.
+
+`ENV=production` or `ENV=staging`
+
+And run it with
+`npm run start`
+
+## License
 
 ```
 The MIT License (MIT)
@@ -41,46 +81,3 @@ THE SOFTWARE.
 ```
 
 
-# Zourney
-Tool for preboarding
-
-## Dependencies
-
-__System dependencies__
-- [node 8.9.4](https://nodejs.org/en/download/package-manager/)
-
-
-__Node dependencies__  
-`npm install`
-
-## Development environment
-
-Running as dev mode  
-`npm run dev`
-
-### Linting
-Running linting  
-`npm run lint`
-
-### Testing (not in place yet)
-`npm run test`
-
-## Building the application
-Building frontend and backend  
-`npm run build`
-
-Building only frontend  
-`npm run build-frontend`
-
-Building only backend  
-`npm run build-backend`
-
-You can find the built source code dist directory.
-
-## Staging & Production environment
-To run the application on production mode you have expose `ENV` variable.
-
-`ENV=production` or `ENV=staging`
-
-And run it with  
-`npm run start`
