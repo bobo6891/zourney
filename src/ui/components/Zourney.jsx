@@ -1,14 +1,25 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // import ReactResizeDetector from 'react-resize-detector';
 // import DocumentTitle from 'react-document-title';
 import { loadData } from '../redux/actions/data-actions';
-import TextQuestion from './TextQuestion';
+// import TextQuestion from './TextQuestion';
+import Welcome from './Welcome';
 
 const DESTKOP_SMALL = 1020;
 const TABLET = 768;
+
+const App = styled.div`
+  min-width: 320px;
+  height: 100%;
+  position: relative;
+  font-family: Open Sans;
+  h1, h2, h3, h4, h5, h6, h7 {
+    font-family: Bitter;
+  }
+`;
 
 export class Zourney extends React.Component {
   constructor(props) {
@@ -18,7 +29,7 @@ export class Zourney extends React.Component {
     this.handleNextClick = this.handleNextClick.bind(this);
     this.state = {
       data: [],
-      screen: 'destkop',
+      screen: 'mobile',
       passedQuestions: []
     };
   }
@@ -52,17 +63,19 @@ export class Zourney extends React.Component {
   }
 
   render() {
-    if (!this.state.data.length) {
-      return null;
-    }
+
+    // if (!this.state.data.length) {
+    //   return null;
+    // }
 
     const [item] = this.state.data
 
     return (
-      <div>
-        <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
-      </div>
+      <App>
+        <Welcome />
+      </App>
     );
+    // <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
   }
 }
 
