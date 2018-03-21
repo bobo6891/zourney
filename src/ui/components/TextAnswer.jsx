@@ -46,14 +46,44 @@ const Answer = styled.div`
   }
 `;
 
-const TextAnswer = ({answer}) => {
-  return (
-    <Answer>{answer}</Answer>
-  );
+class TextAnswer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      correctAnswered: null
+    };
+  }
+
+  componentWillReceiveProps({answer, trueAnswer, userResponse}) {
+    const newState = {};
+    
+    if (answer === userResponse) {
+      newState.correctAnswered = userResponse === trueAnswer ? 'correct' : 'wrong'
+    } else {
+      newState.correctAnswered = '';
+    }
+
+    if (answer === trueAnswer) {
+      newState.correctAnswered = 'correct';
+    }
+
+    this.setState(newState);
+  }
+
+  render() {
+    const { handleAnswerClick, answer } = this.props;
+    return (
+      <Answer className={this.state.correctAnswered} onClick={handleAnswerClick}>{answer}</Answer>
+    );
+  }
 }
 
 TextAnswer.propTypes = {
-  answer: PropTypes.string.isRequired
+  answer: PropTypes.string.isRequired,
+  handleAnswerClick: PropTypes.func.isRequired,
+  trueAnswer: PropTypes.string.isRequired,
+  userResponse: PropTypes.string
 };
 
 export default TextAnswer;

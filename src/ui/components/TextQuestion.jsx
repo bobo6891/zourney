@@ -23,22 +23,29 @@ const Answers = styled.div`
   flex-direction: row;
 `;
 
-// const Buttons = styled.div`
-//   margin-top: 16px;
-//   text-align: right;
-// `;
+const Buttons = styled.div`
+  margin-top: 16px;
+  text-align: right;
+`;
 
 class TextQuestion extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      correctAnswered: null
+    };
+    this.handleAnswerClick = this.handleAnswerClick.bind(this);
   }
 
   handleAnswerClick(e) {
-    console.log('handleAnswerClick');
+    this.setState({
+      correctAnswered: e.currentTarget.textContent === this.props.trueAnswer,
+      userResponse: e.currentTarget.textContent
+    });
   }
 
   render() {
-    const {category, answers, solution, question} = this.props;
+    const { category, answers, solution, question, trueAnswer, handleNextClick } = this.props;
     return (
       <Wrapper>
         <h5>{category}</h5>
@@ -48,9 +55,26 @@ class TextQuestion extends React.Component {
           </div>
           <Answers>
             {answers.map(answer => (
-              <TextAnswer handleAnswerClick={this.handleAnswerClick} key={answer} answer={answer} />
+              <TextAnswer
+                trueAnswer={trueAnswer}
+                handleAnswerClick={this.handleAnswerClick}
+                key={answer}
+                answer={answer}
+                userResponse={this.state.userResponse}
+              />
             ))}
           </Answers>
+          {this.state.correctAnswered === false && (
+            <div>
+              <h6>You stupid! You choosed the wrong answer!</h6>
+              <p>{solution}</p>
+            </div>
+          )}
+          {this.state.userResponse && (
+            <Buttons>
+              <button onClick={handleNextClick}>Next</button>
+            </Buttons>
+          )}
         </Question>
       </Wrapper>
     );
@@ -61,7 +85,9 @@ TextQuestion.propTypes = {
   question: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   answers: PropTypes.arrayOf(PropTypes.string).isRequired,
+  trueAnswer: PropTypes.string.isRequired,
   solution: PropTypes.string.isRequired,
+  handleNextClick: PropTypes.func.isRequired
 };
 
 export default TextQuestion;

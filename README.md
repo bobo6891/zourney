@@ -39,3 +39,48 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+
+
+# Zourney
+Tool for preboarding
+
+## Dependencies
+
+__System dependencies__
+- [node 8.9.4](https://nodejs.org/en/download/package-manager/)
+
+
+__Node dependencies__  
+`npm install`
+
+## Development environment
+
+Running as dev mode  
+`npm run dev`
+
+### Linting
+Running linting  
+`npm run lint`
+
+### Testing (not in place yet)
+`npm run test`
+
+## Building the application
+Building frontend and backend  
+`npm run build`
+
+Building only frontend  
+`npm run build-frontend`
+
+Building only backend  
+`npm run build-backend`
+
+You can find the built source code dist directory.
+
+## Staging & Production environment
+To run the application on production mode you have expose `ENV` variable.
+
+`ENV=production` or `ENV=staging`
+
+And run it with  
+`npm run start`
