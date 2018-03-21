@@ -4,13 +4,13 @@ So you are going to relocate to Berlin and start working at Zalando. But you don
 
 Don't worry, our little pre-boarding [quiz game](https://tlossen.github.io/zourney/) will teach you the basics.
 
-## Concept
+This project started as a [Zalando Hackweek project](https://ideas.zalando.net/projects/a7ff770e-f054-4420-a38c-3508e128e1fb).
 
-https://ideas.zalando.net/projects/a7ff770e-f054-4420-a38c-3508e128e1fb
 
 ## Contributing
 
 Please [help us](CONTRIBUTING.md) to improve the game!
+
 
 ## Development
 
