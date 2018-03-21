@@ -1,5 +1,16 @@
 import * as types from '../actions/action-types';
 
+const shuffle = arr => {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const itemAtIndex = arr[randomIndex];
+
+    arr[randomIndex] = arr[i];
+    arr[i] = itemAtIndex;
+  }
+  return arr;
+};
+
 const defaultState = {
   data: null,
   dataLoading: false,
@@ -25,9 +36,10 @@ export default function dataReducer(state = defaultState, action) {
           return acc;
         }, []);
 
-        item.answers = answers;
+        item.trueAnswer = answers[0];
+        item.answers = shuffle(answers);
         return item;
-      })
+      });
 
       action.data = data;
       return Object.assign({}, state, {
