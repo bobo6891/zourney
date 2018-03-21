@@ -28,7 +28,6 @@ export class Zourney extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', nextProps);
     this.setState({
       data: nextProps.data.data
     });

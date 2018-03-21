@@ -9,7 +9,6 @@ const Answer = styled.div`
   background-color: #e2e2e2;
   margin-top: 8px;
   margin-bottom: 8px;
-  width: 100%;
   
   &:hover {
     background-color: #c4c4c4;
