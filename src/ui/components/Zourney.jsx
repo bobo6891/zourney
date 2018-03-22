@@ -33,8 +33,8 @@ export class Zourney extends React.Component {
 
     this.handleResize = this.handleResize.bind(this);
 
-    if (!props.history.location.pathname || props.history.location.pathname === '/') {
-      props.history.replace('/welcome');
+    if (!props.match.params.page) {
+      props.history.replace('./welcome');
     }
 
     this.state = {
@@ -71,22 +71,19 @@ export class Zourney extends React.Component {
       return null;
     }
 
-    let { pathname } = this.props.history.location;
-    const { categories } = this.props.data.data;
-    if (window.location.host === 'tlossen.github.io') {
-      pathname = `/${pathname.split('/').slice(2).join('/')}`;
-    }
+    const { page } = this.props.match.params;
+    const { categories } = this.props.data.data
 
     return (
       <App>
-        {pathname === '/welcome' && (
+        {page === 'welcome' && (
           <Welcome history={this.props.history} />
         )}
-        {pathname === '/menu' && (
+        {page === 'menu' && (
           <Menu history={this.props.history} categories={categories} />
         )}
-        {pathname.split('/')[1] === 'quiz' && (
-          <Quiz history={this.props.history} categories={categories} allQuestions={this.state.data} />
+        {page === 'quiz' && (
+          <Quiz match={this.props.match} history={this.props.history} categories={categories} allQuestions={this.state.data} />
         )}
       </App>
     );

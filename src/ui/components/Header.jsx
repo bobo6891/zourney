@@ -46,7 +46,7 @@ class Header extends React.Component {
   }
 
   handleBackButton() {
-    this.props.history.push('/menu');
+    this.props.history.push('../menu');
   }
 
   render() {

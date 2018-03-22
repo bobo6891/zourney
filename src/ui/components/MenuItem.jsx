@@ -12,7 +12,7 @@ const Category = styled.div`
 
   padding: 32px 12px;
 
-  &.accomodation {
+  &.accommodation {
     background-color: #b582cd;
   }
   &.paperwork {
@@ -39,7 +39,7 @@ const Icon = styled.div`
   background-size: 48px 48px;
   background-repeat: no-repeat;
   background-position: center;
-  &.accomodation {
+  &.accommodation {
     background-size: 38px;
     background-image: url(/images/icons/ic_home_white_48px.svg);
   }
@@ -77,7 +77,7 @@ class MenuItem extends React.Component {
   }
 
   handleItemClick(e) {
-    this.props.history.push(`/quiz/${this.props.category.toLowerCase()}`);
+    this.props.history.push(`./quiz/${this.props.category.toLowerCase()}`);
   }
 
   render() {

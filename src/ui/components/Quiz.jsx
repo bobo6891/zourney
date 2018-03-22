@@ -37,7 +37,7 @@ class Quiz extends React.Component {
     
     this.handleNextClick = this.handleNextClick.bind(this);
     const groupedQuestions = groupQuestionsByCategory(props.allQuestions);
-    const quizCategory = props.history.location.pathname.split('/')[2];
+    const quizCategory = props.match.params.category;
     this.state = groupedQuestions;
     this.state.quizCategory = quizCategory;
   }

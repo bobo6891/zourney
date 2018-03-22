@@ -17,7 +17,7 @@ if (rootElement) {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-        <Route path="*" exact component={Zourney} />
+        <Route path="/zourney/:page?/:category?" exact component={Zourney} />
       </BrowserRouter>
     </Provider>,
     rootElement
