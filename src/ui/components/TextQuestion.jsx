@@ -22,8 +22,8 @@ const Answers = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-direction: column;
 `;
 
 const Buttons = styled.div`

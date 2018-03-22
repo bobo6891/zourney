@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Answer = styled.div`
   display: block;
-  width: calc(50% - 8px);
   padding: 16px;
   background-color: #e2e2e2;
   margin-top: 8px;
@@ -13,14 +12,6 @@ const Answer = styled.div`
   &:hover {
     background-color: #c4c4c4;
     cursor: pointer;
-  }
-
-  &:nth-child(2) {
-    margin-left: 16px;
-  }
-
-  &:nth-child(3) {
-    margin-right: 16px;
   }
 
   &.correct {

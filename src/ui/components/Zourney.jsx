@@ -35,7 +35,7 @@ export class Zourney extends React.Component {
     this.handleNextClick = this.handleNextClick.bind(this);
     this.handlePlayButton = this.handlePlayButton.bind(this);
 
-    if (!props.history.location.pathName || props.history.location.pathName === '' || props.history.location.pathName === '/') {
+    if (!props.history.location.pathname || props.history.location.pathname === '/') {
       props.history.replace('/welcome');
     }
 
@@ -52,7 +52,7 @@ export class Zourney extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      data: nextProps.data.data
+      data: nextProps.data.data.items
     });
   }
 
@@ -75,7 +75,7 @@ export class Zourney extends React.Component {
   }
 
   handlePlayButton(e) {
-    this.props.history.push('/menu');
+    this.props.history.push('/play');
   }
 
   render() {
@@ -85,11 +85,15 @@ export class Zourney extends React.Component {
 
     const [item] = this.state.data;
     const { pathname } = this.props.history.location;
+    const { categories } = this.props.data.data
 
     return (
       <App>
         {pathname === '/welcome' && (
           <Welcome handlePlayButton={this.handlePlayButton} />
+        )}
+        {pathname === '/play' && (
+          <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
         )}
         {pathname === '/menu' && (
           <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />

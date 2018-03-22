@@ -1,18 +1,11 @@
 import * as types from '../actions/action-types';
-
-const shuffle = arr => {
-  for (let i = arr.length - 1; i >= 0; i--) {
-    const randomIndex = Math.floor(Math.random() * (i + 1));
-    const itemAtIndex = arr[randomIndex];
-
-    arr[randomIndex] = arr[i];
-    arr[i] = itemAtIndex;
-  }
-  return arr;
-};
+import { getCategories, shuffleArray } from '../../utils/helper';
 
 const defaultState = {
-  data: [],
+  data: {
+    categories: [],
+    items: []
+  },
   dataLoading: false,
   error: null
 };
@@ -37,14 +30,17 @@ export default function dataReducer(state = defaultState, action) {
         }, []);
 
         item.trueAnswer = answers[0];
-        item.answers = shuffle(answers);
+        item.answers = shuffleArray(answers);
         return item;
       });
+      const categories = getCategories(data);
 
-      action.data = data;
       return Object.assign({}, state, {
         dataLoading: false,
-        data: action.data,
+        data: {
+          categories,
+          items: data
+        },
         error: null
       });
     }
