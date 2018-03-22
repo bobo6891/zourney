@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // import ReactResizeDetector from 'react-resize-detector';
-// import DocumentTitle from 'react-document-title';
+import DocumentTitle from 'react-document-title';
 import { loadData } from '../redux/actions/data-actions';
-// import TextQuestion from './TextQuestion';
+import TextQuestion from './TextQuestion';
 import Welcome from './Welcome';
 
 const DESTKOP_SMALL = 1020;
@@ -16,7 +16,13 @@ const App = styled.div`
   height: 100%;
   position: relative;
   font-family: Open Sans;
-  h1, h2, h3, h4, h5, h6, h7 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  h7 {
     font-family: Bitter;
   }
 `;
@@ -27,6 +33,12 @@ export class Zourney extends React.Component {
 
     this.handleResize = this.handleResize.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
+    this.handlePlayButton = this.handlePlayButton.bind(this);
+
+    if (!props.history.location.pathName || props.history.location.pathName === '' || props.history.location.pathName === '/') {
+      props.history.replace('/welcome');
+    }
+
     this.state = {
       data: [],
       screen: 'mobile',
@@ -62,20 +74,28 @@ export class Zourney extends React.Component {
     });
   }
 
+  handlePlayButton(e) {
+    this.props.history.push('/menu');
+  }
+
   render() {
+    if (!this.state.data.length) {
+      return null;
+    }
 
-    // if (!this.state.data.length) {
-    //   return null;
-    // }
-
-    const [item] = this.state.data
+    const [item] = this.state.data;
+    const { pathname } = this.props.history.location;
 
     return (
       <App>
-        <Welcome />
+        {pathname === '/welcome' && (
+          <Welcome handlePlayButton={this.handlePlayButton} />
+        )}
+        {pathname === '/menu' && (
+          <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
+        )}
       </App>
     );
-    // <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
   }
 }
 

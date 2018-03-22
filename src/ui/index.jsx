@@ -12,7 +12,6 @@ import { APP_NAME } from 'settings';
 import store from 'redux/store';
 /* eslint-enable */
 
-
 const rootElement = document.querySelector(`#${APP_NAME}`);
 if (rootElement) {
   ReactDOM.render(

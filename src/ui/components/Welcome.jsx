@@ -40,43 +40,14 @@ const Button = styled.button`
 `;
 
 class Welcome extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
 
-  // componentWillReceiveProps({answer, trueAnswer, userResponse}) {
-  //   let delayTransition = 500;
-  //   if (userResponse === trueAnswer) {
-  //     delayTransition = 0;
-  //   }
-  //   if (userResponse === answer && trueAnswer !== answer) {
-  //     this.setState({className: 'wrong '});
-  //     setTimeout(() => {
-  //       this.setState({className: 'fadeOut animated'});
-  //       setTimeout(() => {
-  //         this.setState({display: false});
-  //       }, 1000);
-  //     }, delayTransition)
-      
-  //     return;
-  //   }
-
-  //   if (trueAnswer !== answer) {
-  //     setTimeout(() => {
-  //       this.setState({className: 'fadeOut animated'});
-  //       setTimeout(() => {
-  //         this.setState({display: false});
-  //       }, 1000);
-  //     }, delayTransition);
-  //     return;
-  //   }
-
-  //   if (trueAnswer === answer) {
-  //     this.setState({className: 'correct'});
-  //   }
-  // }
+    
+  }
 
   render() {
+    const {handlePlayButton} = this.props;
     return (
       <Wrapper>
         <H2>
@@ -92,7 +63,7 @@ class Welcome extends React.Component {
           <p>Just press play to start the app and get to learn everything that you need to know before your start date at Zalando.</p>
         </div>
         <Buttons>
-          <Button onClick={this.handlePlayButton}>Play</Button>
+          <Button onClick={handlePlayButton}>Play</Button>
         </Buttons>
       </Wrapper>
     );
