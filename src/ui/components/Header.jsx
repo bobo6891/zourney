@@ -32,7 +32,7 @@ const Button = styled.button`
   border: unset;
   padding: 0;
   margin: 0;
-  background-image: url(/images/icons/chevron-left.svg);
+  background-image: url(/zourney/images/icons/chevron-left.svg);
   background-repeat: no-repeat;
   background-size: 48px;
 `;

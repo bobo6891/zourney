@@ -8,7 +8,7 @@ import Header from './Header';
 const Wrapper = styled.div`
   display: block;
   height: 100%;
-  background-image: url(/images/background_accomodation.png);
+  background-image: url(/zourney/images/background_accomodation.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

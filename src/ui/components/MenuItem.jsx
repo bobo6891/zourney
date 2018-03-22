@@ -41,23 +41,23 @@ const Icon = styled.div`
   background-position: center;
   &.accommodation {
     background-size: 38px;
-    background-image: url(/images/icons/ic_home_white_48px.svg);
+    background-image: url(/zourney/images/icons/ic_home_white_48px.svg);
   }
   &.paperwork {
     background-size: 38px;
-    background-image: url(/images/icons/ic_description_white_48px.svg);
+    background-image: url(/zourney/images/icons/ic_description_white_48px.svg);
   }
   &.lifestyle {
     background-size: 38px;
-    background-image: url(/images/icons/ic_favorite_white_48px.svg);
+    background-image: url(/zourney/images/icons/ic_favorite_white_48px.svg);
   }
   &.zalando {
     background-size: 32px;
-    background-image: url(/images/icons/zalando_white.png);
+    background-image: url(/zourney/images/icons/zalando_white.png);
   }
   &.places {
     background-size: 28px;
-    background-image: url(/images/icons/berlin_white.png);
+    background-image: url(/zourney/images/icons/berlin_white.png);
   }
 `;
 

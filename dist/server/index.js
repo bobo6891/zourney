@@ -192,7 +192,7 @@ module.exports = function () {
     return res.sendStatus(200);
   });
 
-  server.get("/images/*", function (req, res) {
+  server.get("/zourney/images/*", function (req, res) {
     var fileName = req.params[0];
     res.sendFile(IMAGES_DIR + '/' + fileName, { root: VIEW_DIR });
   });

@@ -31,7 +31,7 @@ module.exports = () => {
 
   server.get('/health', (req, res) => res.sendStatus(200));
 
-  server.get("/images/*", (req, res) => {
+  server.get("/zourney/images/*", (req, res) => {
     const fileName = req.params[0];
     res.sendFile(`${IMAGES_DIR}/${fileName}`, { root: VIEW_DIR });
   });

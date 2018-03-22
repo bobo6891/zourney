@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background: url(/images/welcome_screen.jpg) no-repeat center center fixed;
+  background: url(/zourney/images/welcome_screen.jpg) no-repeat center center fixed;
   background-size: cover;
   padding: 24px 16px;
   position: relative;
