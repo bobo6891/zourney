@@ -165,8 +165,9 @@ function _interopRequireDefault(obj) {
 }
 
 // eslint-disable-line import/no-extraneous-dependencies
-var VIEW_DIR = __dirname + '/../ui/'; // eslint-disable-line import/no-extraneous-dependencies
+var VIEW_DIR = __dirname + '/../ui'; // eslint-disable-line import/no-extraneous-dependencies
 
+var IMAGES_DIR = '/images';
 var compiler = (0, _webpack2.default)(_webpack4.default);
 
 module.exports = function () {
@@ -189,6 +190,11 @@ module.exports = function () {
 
   server.get('/health', function (req, res) {
     return res.sendStatus(200);
+  });
+
+  server.get("/images/*", function (req, res) {
+    var fileName = req.params[0];
+    res.sendFile(IMAGES_DIR + '/' + fileName, { root: VIEW_DIR });
   });
 
   server.get("*", function (req, res) {

@@ -7,7 +7,8 @@ import ejs from 'ejs';
 import frontendConfig from '../../webpack.frontend';
 import { APP_NAME, SERVER_PORT, MORGAN_FORMAT, CLIENTJS } from '../../settings';
 
-const VIEW_DIR = `${__dirname}/../ui/`;
+const VIEW_DIR = `${__dirname}/../ui`;
+const IMAGES_DIR = `/images`;
 const compiler = webpack(frontendConfig);
 
 module.exports = () => {
@@ -29,6 +30,11 @@ module.exports = () => {
   server.set("views", VIEW_DIR);
 
   server.get('/health', (req, res) => res.sendStatus(200));
+
+  server.get("/images/*", (req, res) => {
+    const fileName = req.params[0];
+    res.sendFile(`${IMAGES_DIR}/${fileName}`, { root: VIEW_DIR });
+  });
 
   server.get("*", (req, res) => {
     res.render("index", { CLIENTJS, APP_NAME });
