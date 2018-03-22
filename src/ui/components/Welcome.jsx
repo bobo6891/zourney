@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   padding: 24px 16px;
   position: relative;
   height: 100%;
+  color: rgb(255, 255, 255);
   background-image: linear-gradient(135deg, rgba(191,191,191,1) 0%,rgba(63,63,63,1) 100%);
 `;
 
@@ -42,8 +43,6 @@ const Button = styled.button`
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
 
   render() {

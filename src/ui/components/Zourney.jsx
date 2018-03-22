@@ -7,6 +7,7 @@ import DocumentTitle from 'react-document-title';
 import { loadData } from '../redux/actions/data-actions';
 import TextQuestion from './TextQuestion';
 import Welcome from './Welcome';
+import Menu from './Menu';
 
 const DESTKOP_SMALL = 1020;
 const TABLET = 768;
@@ -75,7 +76,7 @@ export class Zourney extends React.Component {
   }
 
   handlePlayButton(e) {
-    this.props.history.push('/play');
+    this.props.history.push('/menu');
   }
 
   render() {
@@ -93,10 +94,10 @@ export class Zourney extends React.Component {
           <Welcome handlePlayButton={this.handlePlayButton} />
         )}
         {pathname === '/play' && (
-          <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
+          <TextQuestion handleNextClick={this.handleNextClick} {...item} />
         )}
         {pathname === '/menu' && (
-          <TextQuestion handleNextClick={this.handleNextClick} key={item.question} {...item} />
+          <Menu categories={categories} />
         )}
       </App>
     );
