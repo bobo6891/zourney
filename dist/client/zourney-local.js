@@ -31003,7 +31003,7 @@ exports.Zourney = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  min-width: 320px;\n  height: 100%;\n  position: relative;\n  font-family: Open Sans;\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6,\n  h7 {\n    font-family: Bitter;\n  }\n'], ['\n  min-width: 320px;\n  height: 100%;\n  position: relative;\n  font-family: Open Sans;\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6,\n  h7 {\n    font-family: Bitter;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  min-width: 320px;\n  height: 100%;\n  overflow: hidden;\n  position: relative;\n  font-family: Open Sans;\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6,\n  h7 {\n    font-family: Bitter;\n  }\n'], ['\n  min-width: 320px;\n  height: 100%;\n  overflow: hidden;\n  position: relative;\n  font-family: Open Sans;\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6,\n  h7 {\n    font-family: Bitter;\n  }\n']);
 
 var _react = __webpack_require__(5);
 
@@ -33024,7 +33024,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  background: url(/zourney/images/welcome_screen.jpg) no-repeat center center fixed;\n  background-size: cover;\n  padding: 24px 16px;\n  position: relative;\n  height: 100%;\n  color: rgb(255, 255, 255);\n'], ['\n  background: url(/zourney/images/welcome_screen.jpg) no-repeat center center fixed;\n  background-size: cover;\n  padding: 24px 16px;\n  position: relative;\n  height: 100%;\n  color: rgb(255, 255, 255);\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  background: url(/zourney/images/welcome_screen.jpg) no-repeat center center fixed;\n  background-size: cover;\n  padding: 24px 16px;\n  position: relative;\n  min-height: 100%;\n  color: rgb(255, 255, 255);\n  overflow: auto;\n'], ['\n  background: url(/zourney/images/welcome_screen.jpg) no-repeat center center fixed;\n  background-size: cover;\n  padding: 24px 16px;\n  position: relative;\n  min-height: 100%;\n  color: rgb(255, 255, 255);\n  overflow: auto;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  margin-bottom: 42px;\n'], ['\n  margin-bottom: 42px;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  position: absolute;\n  bottom: 24px;\n  right: 24px;\n'], ['\n  position: absolute;\n  bottom: 24px;\n  right: 24px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  padding: 8px;\n  width: 140px;\n  background-color: rgb(255, 255, 255);\n  border: none;\n  box-shadow: 0px 2px 2px 0 rgba(67,67,67,0.7);\n  border-radius: 50px;\n  color: rgb(0, 0, 0);\n  font-size: 1.2em;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n  font-weight: 600;\n  bottom: 0;\n  right: 0;\n\n  &:active {\n    box-shadow: 0px 1px 1px 0 rgba(67,67,67,0.7);\n  }\n'], ['\n  padding: 8px;\n  width: 140px;\n  background-color: rgb(255, 255, 255);\n  border: none;\n  box-shadow: 0px 2px 2px 0 rgba(67,67,67,0.7);\n  border-radius: 50px;\n  color: rgb(0, 0, 0);\n  font-size: 1.2em;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n  font-weight: 600;\n  bottom: 0;\n  right: 0;\n\n  &:active {\n    box-shadow: 0px 1px 1px 0 rgba(67,67,67,0.7);\n  }\n']);
@@ -33120,7 +33120,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  color: rgb(255,255,255);\n'], ['\n  color: rgb(255,255,255);\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  color: rgb(255,255,255);\n  height: 100%;\n  overflow: auto;\n'], ['\n  color: rgb(255,255,255);\n  height: 100%;\n  overflow: auto;\n']);
 
 var _react = __webpack_require__(5);
 
@@ -33304,9 +33304,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  height: 100%;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n'], ['\n  display: block;\n  height: 100%;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  display: block;\n  height: 100%;\n  background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;\n'], ['\n  display: block;\n  height: 100%;\n  background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  text-align: center;\n  padding: 8px 0;\n  color: #b582cd;\n'], ['\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  text-align: center;\n  padding: 8px 0;\n  color: #b582cd;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  height: 100%;\n  overflow: auto;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n'], ['\n  display: block;\n  height: 100%;\n  overflow: auto;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: block;\n  min-height: 100%;\n  background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;\n  background-attachment: fixed;\n'], ['\n  display: block;\n  min-height: 100%;\n  background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;\n  background-attachment: fixed;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  position: relative;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  text-align: center;\n  padding: 8px 0;\n  color: #b582cd;\n'], ['\n  position: relative;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  text-align: center;\n  padding: 8px 0;\n  color: #b582cd;\n']);
 
 var _react = __webpack_require__(5);
 
@@ -33424,9 +33424,10 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  padding: 16px;\n  font-size: 1.2em;\n'], ['\n  display: block;\n  padding: 16px;\n  font-size: 1.2em;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  padding: 28px 0;\n'], ['\n  padding: 28px 0;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['padding: 28px 0;'], ['padding: 28px 0;']),
     _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: space-between;\n  align-content: center;\n  flex-wrap: nowrap;\n  flex-direction: column;\n'], ['\n  display: flex;\n  justify-content: space-between;\n  align-content: center;\n  flex-wrap: nowrap;\n  flex-direction: column;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  margin-top: 16px;\n  text-align: center;\n'], ['\n  margin-top: 16px;\n  text-align: center;\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  margin-top: 16px;\n  text-align: center;\n'], ['\n  margin-top: 16px;\n  text-align: center;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  margin: 8px 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  padding: 16px;\n  color: #434343;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n\n  ul {\n    padding-left: 16px;\n  }\n'], ['\n  margin: 8px 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  padding: 16px;\n  color: #434343;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n\n  ul {\n    padding-left: 16px;\n  }\n']);
 
 var _react = __webpack_require__(5);
 
@@ -33460,6 +33461,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var markdown = _markdown2.default.markdown;
 
+var ABCD = ['A', 'B', 'C', 'D'];
 
 var Wrapper = _styledComponents2.default.div(_templateObject);
 
@@ -33468,6 +33470,8 @@ var Question = _styledComponents2.default.div(_templateObject2);
 var Answers = _styledComponents2.default.div(_templateObject3);
 
 var Buttons = _styledComponents2.default.div(_templateObject4);
+
+var Solution = _styledComponents2.default.div(_templateObject5);
 
 var TextQuestion = function (_React$Component) {
   _inherits(TextQuestion, _React$Component);
@@ -33488,8 +33492,8 @@ var TextQuestion = function (_React$Component) {
     key: 'handleAnswerClick',
     value: function handleAnswerClick(e) {
       this.setState({
-        correctAnswered: e.currentTarget.textContent === this.props.trueAnswer,
-        userResponse: e.currentTarget.textContent
+        correctAnswered: e.currentTarget.querySelector('.answer').textContent === this.props.trueAnswer,
+        userResponse: e.currentTarget.querySelector('.answer').textContent
       });
     }
   }, {
@@ -33521,8 +33525,9 @@ var TextQuestion = function (_React$Component) {
         _react2.default.createElement(
           Answers,
           null,
-          answers.map(function (answer) {
+          answers.map(function (answer, idx) {
             return _react2.default.createElement(_TextAnswer2.default, {
+              bullet: ABCD[idx],
               trueAnswer: trueAnswer,
               handleAnswerClick: _this2.handleAnswerClick,
               key: answer,
@@ -33532,7 +33537,7 @@ var TextQuestion = function (_React$Component) {
           })
         ),
         this.state.correctAnswered !== null && _react2.default.createElement(
-          'div',
+          Solution,
           null,
           _react2.default.createElement('p', { dangerouslySetInnerHTML: solutionHtml })
         ),
@@ -36139,7 +36144,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  padding: 16px;\n  background-color: #e2e2e2;\n  margin-top: 8px;\n  margin-bottom: 8px;\n  \n  &:hover {\n    background-color: #c4c4c4;\n    cursor: pointer;\n  }\n\n  &.correct {\n    background-color: rgb(219, 239, 220);\n    color: rgb(40, 91, 42);\n\n\n    &:hover {\n      background-color: rgb(219, 239, 220);\n      color: rgb(40, 91, 42);\n      cursor: default;\n    }\n  }\n\n  &.wrong {\n    background-color: rgb(253, 217, 215);\n    color: rgb(127, 35, 28);\n\n    &:hover {\n      background-color: rgb(253, 217, 215);\n      color: rgb(127, 35, 28);\n      cursor: default;\n    }\n  }\n\n  &.fade-out {\n    opacity: 0;\n    transition: opacity 1s 1s ease;\n  }\n'], ['\n  display: block;\n  padding: 16px;\n  background-color: #e2e2e2;\n  margin-top: 8px;\n  margin-bottom: 8px;\n  \n  &:hover {\n    background-color: #c4c4c4;\n    cursor: pointer;\n  }\n\n  &.correct {\n    background-color: rgb(219, 239, 220);\n    color: rgb(40, 91, 42);\n\n\n    &:hover {\n      background-color: rgb(219, 239, 220);\n      color: rgb(40, 91, 42);\n      cursor: default;\n    }\n  }\n\n  &.wrong {\n    background-color: rgb(253, 217, 215);\n    color: rgb(127, 35, 28);\n\n    &:hover {\n      background-color: rgb(253, 217, 215);\n      color: rgb(127, 35, 28);\n      cursor: default;\n    }\n  }\n\n  &.fade-out {\n    opacity: 0;\n    transition: opacity 1s 1s ease;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  padding: 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n  margin: 8px 0;\n  color: #434343;\n  overflow: hidden;\n\n  &:first-child {\n    margin: 0 0 8px 0;\n  }\n\n  &:hover {\n    .answer {\n      background-color: #c4c4c4;\n      cursor: pointer;\n    }\n  }\n\n  &.correct {\n    .answer {\n      background-color: rgb(219, 239, 220);\n      color: rgb(40, 91, 42);\n    }\n  }\n\n  &.wrong {\n    .answer {\n      background-color: rgb(253, 217, 215);\n      color: rgb(127, 35, 28);\n    }\n  }\n\n  &.fade-out {\n    opacity: 0;\n    transition: opacity 1s 1s ease;\n  }\n'], ['\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  padding: 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n  margin: 8px 0;\n  color: #434343;\n  overflow: hidden;\n\n  &:first-child {\n    margin: 0 0 8px 0;\n  }\n\n  &:hover {\n    .answer {\n      background-color: #c4c4c4;\n      cursor: pointer;\n    }\n  }\n\n  &.correct {\n    .answer {\n      background-color: rgb(219, 239, 220);\n      color: rgb(40, 91, 42);\n    }\n  }\n\n  &.wrong {\n    .answer {\n      background-color: rgb(253, 217, 215);\n      color: rgb(127, 35, 28);\n    }\n  }\n\n  &.fade-out {\n    opacity: 0;\n    transition: opacity 1s 1s ease;\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  padding: 16px;\n  color: #b582cd;\n  font-weight: 400;\n'], ['\n  padding: 16px;\n  color: #b582cd;\n  font-weight: 400;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  padding: 16px 16px 16px 8px;\n  display: block;\n  flex: 1;\n'], ['\n  padding: 16px 16px 16px 8px;\n  display: block;\n  flex: 1;\n']);
 
 var _react = __webpack_require__(5);
 
@@ -36163,7 +36170,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Answer = _styledComponents2.default.div(_templateObject);
+var Wrapper = _styledComponents2.default.div(_templateObject);
+
+var Bullet = _styledComponents2.default.div(_templateObject2);
+
+var Answer = _styledComponents2.default.div(_templateObject3);
 
 var TextAnswer = function (_React$Component) {
   _inherits(TextAnswer, _React$Component);
@@ -36193,6 +36204,7 @@ var TextAnswer = function (_React$Component) {
       if (userResponse === trueAnswer) {
         delayTransition = 0;
       }
+
       if (userResponse === answer && trueAnswer !== answer) {
         this.setState({ className: 'wrong ' });
         setTimeout(function () {
@@ -36223,6 +36235,7 @@ var TextAnswer = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
+          bullet = _props.bullet,
           handleAnswerClick = _props.handleAnswerClick,
           answer = _props.answer;
 
@@ -36230,9 +36243,18 @@ var TextAnswer = function (_React$Component) {
         return null;
       }
       return _react2.default.createElement(
-        Answer,
-        { className: this.state.className, onClick: handleAnswerClick },
-        answer
+        Wrapper,
+        { onClick: handleAnswerClick, className: this.state.className },
+        _react2.default.createElement(
+          Bullet,
+          null,
+          bullet
+        ),
+        _react2.default.createElement(
+          Answer,
+          { className: 'answer' },
+          answer
+        )
       );
     }
   }]);
@@ -36262,8 +36284,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  background-color: rgb(255,255,255);\n  text-align: center;\n  padding: 16px 0 8px;\n\n  > .text {\n    text-align: center;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n'], ['\n  background-color: rgb(255,255,255);\n  text-align: center;\n  padding: 16px 0 8px;\n\n  > .text {\n    text-align: center;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 8px;\n  left: 8px;\n  height: 48px;\n  width: 48px;\n  background-color: unset;\n  border: unset;\n  padding: 0;\n  margin: 0;\n  background-image: url(/zourney/images/icons/chevron-left.svg);\n  background-repeat: no-repeat;\n  background-size: 48px;\n'], ['\n  position: absolute;\n  top: 8px;\n  left: 8px;\n  height: 48px;\n  width: 48px;\n  background-color: unset;\n  border: unset;\n  padding: 0;\n  margin: 0;\n  background-image: url(/zourney/images/icons/chevron-left.svg);\n  background-repeat: no-repeat;\n  background-size: 48px;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  background-color: rgb(255,255,255);\n  text-align: center;\n  padding: 16px 0 8px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n\n  > .text {\n    text-align: center;\n    display: block;\n    flex: 1;\n    margin-left: -48px;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n'], ['\n  background-color: rgb(255,255,255);\n  text-align: center;\n  padding: 16px 0 8px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n\n  > .text {\n    text-align: center;\n    display: block;\n    flex: 1;\n    margin-left: -48px;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  position: relative;\n  height: 48px;\n  width: 48px;\n  background-color: unset;\n  border: unset;\n  padding: 0;\n  margin: 0;\n  background-image: url(/zourney/images/icons/chevron-left.svg);\n  background-repeat: no-repeat;\n  background-size: 48px;\n'], ['\n  position: relative;\n  height: 48px;\n  width: 48px;\n  background-color: unset;\n  border: unset;\n  padding: 0;\n  margin: 0;\n  background-image: url(/zourney/images/icons/chevron-left.svg);\n  background-repeat: no-repeat;\n  background-size: 48px;\n']);
 
 var _react = __webpack_require__(5);
 

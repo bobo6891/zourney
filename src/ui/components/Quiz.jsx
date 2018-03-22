@@ -8,8 +8,10 @@ import Header from './Header';
 const Wrapper = styled.div`
   display: block;
   height: 100%;
+  overflow: auto;
   background-image: url(/zourney/images/background_accomodation.png);
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   color: rgb(255,255,255);
@@ -17,12 +19,13 @@ const Wrapper = styled.div`
 
 const Transparent = styled.div`
   display: block;
-  height: 100%;
+  min-height: 100%;
   background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;
+  background-attachment: fixed;
 `;
 
 const ToContinue = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0;

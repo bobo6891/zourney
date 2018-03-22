@@ -6,9 +6,17 @@ const Wrapper = styled.div`
   background-color: rgb(255,255,255);
   text-align: center;
   padding: 16px 0 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
 
   > .text {
     text-align: center;
+    display: block;
+    flex: 1;
+    margin-left: -48px;
     h6 {
       font-weight: 300;
       color: #434343;
@@ -23,9 +31,7 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-  position: absolute;
-  top: 8px;
-  left: 8px;
+  position: relative;
   height: 48px;
   width: 48px;
   background-color: unset;

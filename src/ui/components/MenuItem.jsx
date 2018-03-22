@@ -84,7 +84,7 @@ class MenuItem extends React.Component {
     const {category } = this.props;
     return (
       <Category onClick={this.handleItemClick} className={category.toLowerCase()}>
-        <Icon className={category.toLowerCase()}></Icon>
+        <Icon className={category.toLowerCase()} />
         <Text>
           <h3>{category}</h3>
           <p>2 / 10 Questions completed</p>

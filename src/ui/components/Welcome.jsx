@@ -7,8 +7,9 @@ const Wrapper = styled.div`
   background-size: cover;
   padding: 24px 16px;
   position: relative;
-  height: 100%;
+  min-height: 100%;
   color: rgb(255, 255, 255);
+  overflow: auto;
 `;
 
 const H2 = styled.h2`

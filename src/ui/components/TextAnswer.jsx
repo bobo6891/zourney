@@ -2,38 +2,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Answer = styled.div`
-  display: block;
-  padding: 16px;
-  background-color: #e2e2e2;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 0;
+  font-size: 0.8em;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);
+  margin: 8px 0;
+  color: #434343;
+  overflow: hidden;
+
+  &:first-child {
+    margin: 0 0 8px 0;
+  }
+
   &:hover {
-    background-color: #c4c4c4;
-    cursor: pointer;
+    .answer {
+      background-color: #c4c4c4;
+      cursor: pointer;
+    }
   }
 
   &.correct {
-    background-color: rgb(219, 239, 220);
-    color: rgb(40, 91, 42);
-
-
-    &:hover {
+    .answer {
       background-color: rgb(219, 239, 220);
       color: rgb(40, 91, 42);
-      cursor: default;
     }
   }
 
   &.wrong {
-    background-color: rgb(253, 217, 215);
-    color: rgb(127, 35, 28);
-
-    &:hover {
+    .answer {
       background-color: rgb(253, 217, 215);
       color: rgb(127, 35, 28);
-      cursor: default;
     }
   }
 
@@ -41,6 +46,18 @@ const Answer = styled.div`
     opacity: 0;
     transition: opacity 1s 1s ease;
   }
+`;
+
+const Bullet = styled.div`
+  padding: 16px;
+  color: #b582cd;
+  font-weight: 400;
+`;
+
+const Answer = styled.div`
+  padding: 16px 16px 16px 8px;
+  display: block;
+  flex: 1;
 `;
 
 class TextAnswer extends React.Component {
@@ -58,6 +75,7 @@ class TextAnswer extends React.Component {
     if (userResponse === trueAnswer) {
       delayTransition = 0;
     }
+
     if (userResponse === answer && trueAnswer !== answer) {
       this.setState({className: 'wrong '});
       setTimeout(() => {
@@ -86,12 +104,15 @@ class TextAnswer extends React.Component {
   }
 
   render() {
-    const { handleAnswerClick, answer } = this.props;
+    const {bullet, handleAnswerClick, answer } = this.props;
     if (!this.state.display) {
       return null;
     }
     return (
-      <Answer className={this.state.className} onClick={handleAnswerClick}>{answer}</Answer>
+      <Wrapper onClick={handleAnswerClick} className={this.state.className}>
+        <Bullet>{bullet}</Bullet>
+        <Answer className="answer">{answer}</Answer>
+      </Wrapper>
     );
   }
 }

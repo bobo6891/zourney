@@ -5,6 +5,8 @@ import MenuItem from './MenuItem';
 
 const Wrapper = styled.div`
   color: rgb(255,255,255);
+  height: 100%;
+  overflow: auto;
 `;
 
 class Menu extends React.Component {

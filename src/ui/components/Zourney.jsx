@@ -14,6 +14,7 @@ const TABLET = 768;
 const App = styled.div`
   min-width: 320px;
   height: 100%;
+  overflow: hidden;
   position: relative;
   font-family: Open Sans;
   h1,
