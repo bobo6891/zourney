@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  background: url(/images/welcome_screen.jpg) no-repeat center center fixed;
+  background-size: cover;
   padding: 24px 16px;
   position: relative;
   height: 100%;
-  background-image: linear-gradient(135deg, rgba(191,191,191,1) 0%,rgba(63,63,63,1) 100%);
 `;
 
 const H2 = styled.h2`
