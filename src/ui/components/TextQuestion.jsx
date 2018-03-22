@@ -1,10 +1,10 @@
 import React from 'react';
-import Markdown from 'markdown'
+import Markdown from 'markdown';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TextAnswer from './TextAnswer';
 
-const markdown = Markdown.markdown;
+const { markdown } = Markdown;
 
 const Wrapper = styled.div`
   display: block;
@@ -13,9 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Question = styled.div`
-  display: block;
-  border: 1px solid;
-  padding: 16px;
+  padding: 28px 0;
 `;
 
 const Answers = styled.div`
@@ -49,14 +47,12 @@ class TextQuestion extends React.Component {
 
   render() {
     const { category, answers, solution, question, trueAnswer, handleNextClick } = this.props;
-    const solutionHtml = {__html: markdown.toHTML(solution)};
+    const solutionHtml = { __html: markdown.toHTML(solution) };
     return (
       <Wrapper>
-        <h5>{category}</h5>
         <Question>
-          <div>
-            <p>{question}</p>
-          </div>
+          <p>{question}</p>
+        </Question>
           <Answers>
             {answers.map(answer => (
               <TextAnswer
@@ -78,7 +74,6 @@ class TextQuestion extends React.Component {
               <button onClick={handleNextClick}>Next</button>
             </Buttons>
           )}
-        </Question>
       </Wrapper>
     );
   }

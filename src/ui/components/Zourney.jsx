@@ -71,8 +71,11 @@ export class Zourney extends React.Component {
       return null;
     }
 
-    const { pathname } = this.props.history.location;
+    let { pathname } = this.props.history.location;
     const { categories } = this.props.data.data;
+    if (window.location.host === 'tlossen.github.io') {
+      pathname = `/${pathname.split('/').slice(2).join('/')}`;
+    }
 
     return (
       <App>

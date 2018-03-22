@@ -6,8 +6,29 @@ import TextQuestion from './TextQuestion';
 import Header from './Header';
 
 const Wrapper = styled.div`
+  display: block;
+  height: 100%;
   background-image: url(/images/background_accomodation.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: rgb(255,255,255);
+`;
+
+const Transparent = styled.div`
+  display: block;
+  height: 100%;
+  background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;
+`;
+
+const ToContinue = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 8px 0;
+  color: #b582cd;
 `;
 
 class Quiz extends React.Component {
@@ -36,8 +57,11 @@ class Quiz extends React.Component {
 
     return (
       <Wrapper>
-        <Header categoryName={categoryName} />
-        <TextQuestion history={this.props.history} handleNextClick={this.handleNextClick} {...item} />
+        <Transparent>
+          <Header history={this.props.history} categoryName={categoryName} />
+          <TextQuestion history={this.props.history} handleNextClick={this.handleNextClick} {...item} />
+          <ToContinue>Select an answer to continue</ToContinue>
+        </Transparent>
       </Wrapper>
     );
   }
