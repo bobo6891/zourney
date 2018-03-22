@@ -19,7 +19,7 @@ module.exports = {
     spy: true
   },
   rules: {
-    'react/prop-types': [2, { ignore: ['actions', 'match', 'location'] }],
+    'react/prop-types': 0,
     'import/no-named-as-default': 0
   },
   overrides: [

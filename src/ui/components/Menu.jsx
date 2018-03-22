@@ -17,11 +17,11 @@ class Menu extends React.Component {
   }
 
   render() {
-    const {categories, history} = this.props;
+    const {categories, history, screen} = this.props;
     return (
       <Wrapper>
         {categories.map(category => (
-          <MenuItem history={history} key={category} category={category} />
+          <MenuItem screen={screen} history={history} key={category} category={category} />
         ))}
       </Wrapper>
     );

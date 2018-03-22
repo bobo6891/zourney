@@ -11,11 +11,16 @@ const Wrapper = styled.div`
   padding: 0;
   font-size: 0.8em;
   border-radius: 4px;
+  max-height: 300px;
   background-color: #fff;
   box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);
   margin: 8px 0;
   color: #434343;
   overflow: hidden;
+  transition-delay: 0s, 0s, 0.1s;
+  transition-duration: 1s, 1s, 1s;
+  transition-timing-function: ease-out, ease-out, ease-out;
+  transition-property: opacity, max-height, margin;
 
   &:first-child {
     margin: 0 0 8px 0;
@@ -30,40 +35,41 @@ const Wrapper = styled.div`
 
   &.correct {
     .answer {
-      background-color: rgb(219, 239, 220);
-      color: rgb(40, 91, 42);
+      background-color: #b5dd7a;
     }
   }
 
   &.wrong {
     .answer {
-      background-color: rgb(253, 217, 215);
-      color: rgb(127, 35, 28);
+      background-color: #ff89ab;
     }
+  }
+
+  &.slide-out {
+    max-height: 0px;
+    margin: 0px;
   }
 
   &.fade-out {
     opacity: 0;
-    transition: opacity 1s 1s ease;
   }
-`;
 
-const Bullet = styled.div`
-  padding: 16px;
-  color: #b582cd;
-  font-weight: 400;
-`;
+  > .bullet {
+    padding: 16px;
+    color: #b582cd;
+    font-weight: 400;
+  }
 
-const Answer = styled.div`
-  padding: 16px 16px 16px 8px;
-  display: block;
-  flex: 1;
+  > .answer {
+    padding: 16px 16px 16px 8px;
+    display: block;
+    flex: 1;
+  }
 `;
 
 class TextAnswer extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       className: null,
       display: true
@@ -71,30 +77,25 @@ class TextAnswer extends React.Component {
   }
 
   componentWillReceiveProps({answer, trueAnswer, userResponse}) {
-    let delayTransition = 500;
+    let delayTransition = 750;
     if (userResponse === trueAnswer) {
       delayTransition = 0;
     }
 
-    if (userResponse === answer && trueAnswer !== answer) {
-      this.setState({className: 'wrong '});
-      setTimeout(() => {
-        this.setState({className: 'fadeOut animated'});
-        setTimeout(() => {
-          this.setState({display: false});
-        }, 1000);
-      }, delayTransition)
-      
-      return;
-    }
-
     if (trueAnswer !== answer) {
+      let className = '';
+      if (userResponse === answer) {
+        className = 'wrong'
+        this.setState({className});
+      }
       setTimeout(() => {
-        this.setState({className: 'fadeOut animated'});
+        className += ' slide-out fade-out';
+        this.setState({className});
         setTimeout(() => {
           this.setState({display: false});
         }, 1000);
       }, delayTransition);
+      
       return;
     }
 
@@ -104,14 +105,14 @@ class TextAnswer extends React.Component {
   }
 
   render() {
-    const {bullet, handleAnswerClick, answer } = this.props;
+    const {screen, bullet, handleAnswerClick, answer } = this.props;
     if (!this.state.display) {
       return null;
     }
     return (
-      <Wrapper onClick={handleAnswerClick} className={this.state.className}>
-        <Bullet>{bullet}</Bullet>
-        <Answer className="answer">{answer}</Answer>
+      <Wrapper screen={screen} onClick={handleAnswerClick} className={this.state.className}>
+        <div className="bullet">{bullet}</div>
+        <div className="answer">{answer}</div>
       </Wrapper>
     );
   }

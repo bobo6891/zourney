@@ -15,23 +15,14 @@ const Wrapper = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   color: rgb(255,255,255);
-`;
 
-const Transparent = styled.div`
-  display: block;
-  min-height: 100%;
-  background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;
-  background-attachment: fixed;
-`;
-
-const ToContinue = styled.div`
-  position: relative;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  text-align: center;
-  padding: 8px 0;
-  color: #b582cd;
+  > .transparent {
+    display: block;
+    min-height: 100%;
+    background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 `;
 
 class Quiz extends React.Component {
@@ -45,7 +36,7 @@ class Quiz extends React.Component {
     this.state.quizCategory = quizCategory;
   }
 
-  handleNextClick(e) {
+  handleNextClick() {
     const questions = this.state[this.state.quizCategory].slice(1)
     const newState = {};
     newState[this.state.quizCategory] = questions;
@@ -53,6 +44,7 @@ class Quiz extends React.Component {
   }
 
   render() {
+    const { screen } = this.props;
     const [item] = this.state[this.state.quizCategory];
     const categoryName = this.props.categories.find(category => (
       category.toLowerCase() === this.state.quizCategory
@@ -60,19 +52,18 @@ class Quiz extends React.Component {
 
     return (
       <Wrapper>
-        <Transparent>
-          <Header history={this.props.history} categoryName={categoryName} />
-          <TextQuestion history={this.props.history} handleNextClick={this.handleNextClick} {...item} />
-          <ToContinue>Select an answer to continue</ToContinue>
-        </Transparent>
+        <div className="transparent">
+          <Header screen={screen} history={this.props.history} categoryName={categoryName} />
+          <TextQuestion screen={screen} history={this.props.history} handleNextClick={this.handleNextClick} {...item} />
+        </div>
       </Wrapper>
     );
   }
 }
 
-Quiz.propTypes = {
-  allQuestions: PropTypes.array.isRequired,
-  categories: PropTypes.array.isRequired
-};
+// Quiz.propTypes = {
+//   allQuestions: PropTypes.array.isRequired,
+//   categories: PropTypes.array.isRequired
+// };
 
 export default Quiz;

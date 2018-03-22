@@ -2,14 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import ReactResizeDetector from 'react-resize-detector';
+import ReactResizeDetector from 'react-resize-detector';
 import { loadData } from '../redux/actions/data-actions';
 import Welcome from './Welcome';
 import Menu from './Menu';
 import Quiz from './Quiz';
 
-const DESTKOP_SMALL = 1020;
-const TABLET = 768;
+const XS_DEVICE = 575.98;
+const S_DEVICE = 767.98;
+const M_DEVICE = 991.98;
+const L_DEVICE = 1199.98;
 
 const App = styled.div`
   min-width: 320px;
@@ -25,6 +27,7 @@ const App = styled.div`
   h6,
   h7 {
     font-family: Bitter;
+    font-size: 1em;
   }
 `;
 
@@ -40,7 +43,7 @@ export class Zourney extends React.Component {
 
     this.state = {
       data: [],
-      screen: 'mobile',
+      screen: 'XS_DEVICE',
       passedQuestions: []
     };
   }
@@ -56,15 +59,21 @@ export class Zourney extends React.Component {
   }
 
   handleResize(width) {
-    if (width < TABLET) {
-      this.setState({ screen: 'tablet' });
+    if (width > L_DEVICE) {
+      this.setState({ screen: 'L_DEVICE' });
       return;
     }
-    if (width < DESTKOP_SMALL) {
-      this.setState({ screen: 'desktop-small' });
+    if (width > M_DEVICE) {
+      this.setState({ screen: 'M_DEVICE' });
       return;
     }
-    this.setState({ screen: 'desktop' });
+    if (width > S_DEVICE) {
+      this.setState({ screen: 'S_DEVICE' });
+      return;
+    }
+    if (width > XS_DEVICE) {
+      this.setState({ screen: 'XS_DEVICE' });
+    }
   }
 
   render() {
@@ -78,14 +87,15 @@ export class Zourney extends React.Component {
     return (
       <App>
         {page === 'welcome' && (
-          <Welcome history={this.props.history} />
+          <Welcome screen={this.state.screen} history={this.props.history} />
         )}
         {page === 'menu' && (
-          <Menu history={this.props.history} categories={categories} />
+          <Menu screen={this.state.screen} history={this.props.history} categories={categories} />
         )}
         {page === 'quiz' && (
-          <Quiz match={this.props.match} history={this.props.history} categories={categories} allQuestions={this.state.data} />
+          <Quiz screen={this.state.screen} match={this.props.match} history={this.props.history} categories={categories} allQuestions={this.state.data} />
         )}
+        <ReactResizeDetector handleWidth onResize={this.handleResize} />
       </App>
     );
   }
