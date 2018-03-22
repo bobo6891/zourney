@@ -55,18 +55,6 @@ class Welcome extends React.Component {
   render() {
     return (
       <Wrapper>
-        <H2>
-          Welcome User,
-        </H2>
-        <div>
-          <p>
-            This is the welcome page with placeholder text.
-          </p>
-          <p>
-            If you’re looking for info and help to get set up in Berlin you’ve come to the right place.
-          </p>
-          <p>Just press play to start the app and get to learn everything that you need to know before your start date at Zalando.</p>
-        </div>
         <Buttons>
           <Button onClick={this.handlePlayButton}>Play</Button>
         </Buttons>
