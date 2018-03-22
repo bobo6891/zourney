@@ -43,10 +43,15 @@ const Button = styled.button`
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handlePlayButton = this.handlePlayButton.bind(this);
+  }
+
+  handlePlayButton(e) {
+    this.props.history.push('/menu');
   }
 
   render() {
-    const {handlePlayButton} = this.props;
     return (
       <Wrapper>
         <H2>
@@ -62,7 +67,7 @@ class Welcome extends React.Component {
           <p>Just press play to start the app and get to learn everything that you need to know before your start date at Zalando.</p>
         </div>
         <Buttons>
-          <Button onClick={handlePlayButton}>Play</Button>
+          <Button onClick={this.handlePlayButton}>Play</Button>
         </Buttons>
       </Wrapper>
     );

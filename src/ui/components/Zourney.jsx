@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // import ReactResizeDetector from 'react-resize-detector';
-import DocumentTitle from 'react-document-title';
 import { loadData } from '../redux/actions/data-actions';
-import TextQuestion from './TextQuestion';
 import Welcome from './Welcome';
 import Menu from './Menu';
+import Quiz from './Quiz';
 
 const DESTKOP_SMALL = 1020;
 const TABLET = 768;
@@ -33,8 +32,6 @@ export class Zourney extends React.Component {
     super(props);
 
     this.handleResize = this.handleResize.bind(this);
-    this.handleNextClick = this.handleNextClick.bind(this);
-    this.handlePlayButton = this.handlePlayButton.bind(this);
 
     if (!props.history.location.pathname || props.history.location.pathname === '/') {
       props.history.replace('/welcome');
@@ -69,35 +66,24 @@ export class Zourney extends React.Component {
     this.setState({ screen: 'desktop' });
   }
 
-  handleNextClick(e) {
-    this.setState({
-      data: this.state.data.slice(1)
-    });
-  }
-
-  handlePlayButton(e) {
-    this.props.history.push('/menu');
-  }
-
   render() {
     if (!this.state.data.length) {
       return null;
     }
 
-    const [item] = this.state.data;
     const { pathname } = this.props.history.location;
-    const { categories } = this.props.data.data
+    const { categories } = this.props.data.data;
 
     return (
       <App>
         {pathname === '/welcome' && (
-          <Welcome handlePlayButton={this.handlePlayButton} />
-        )}
-        {pathname === '/play' && (
-          <TextQuestion handleNextClick={this.handleNextClick} {...item} />
+          <Welcome history={this.props.history} />
         )}
         {pathname === '/menu' && (
-          <Menu categories={categories} />
+          <Menu history={this.props.history} categories={categories} />
+        )}
+        {pathname.split('/')[1] === 'quiz' && (
+          <Quiz history={this.props.history} categories={categories} allQuestions={this.state.data} />
         )}
       </App>
     );

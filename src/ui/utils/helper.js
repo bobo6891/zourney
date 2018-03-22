@@ -24,4 +24,15 @@ const shuffleArray = arr => {
   return arr;
 };
 
-export { htmlToDom, getCategories, shuffleArray };
+const groupQuestionsByCategory = arr => (
+  arr.reduce((acc, question) => {
+    const category = question.category.toLowerCase();
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(question);
+    return acc;
+  }, {})
+);
+
+export { htmlToDom, getCategories, shuffleArray, groupQuestionsByCategory };

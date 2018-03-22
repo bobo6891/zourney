@@ -8,6 +8,7 @@ const Category = styled.div`
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
+  cursor: pointer;
 
   padding: 32px 12px;
 
@@ -70,14 +71,19 @@ const Text = styled.div`
 class MenuItem extends React.Component {
   constructor(props) {
     super(props);
-
+    
+    this.handleItemClick = this.handleItemClick.bind(this);
     this.state = {};
+  }
+
+  handleItemClick(e) {
+    this.props.history.push(`/quiz/${this.props.category.toLowerCase()}`);
   }
 
   render() {
     const {category } = this.props;
     return (
-      <Category className={category.toLowerCase()}>
+      <Category onClick={this.handleItemClick} className={category.toLowerCase()}>
         <Icon className={category.toLowerCase()}></Icon>
         <Text>
           <h3>{category}</h3>
