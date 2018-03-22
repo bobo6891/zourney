@@ -1,7 +1,10 @@
 import React from 'react';
+import Markdown from 'markdown'
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TextAnswer from './TextAnswer';
+
+const markdown = Markdown.markdown;
 
 const Wrapper = styled.div`
   display: block;
@@ -46,6 +49,7 @@ class TextQuestion extends React.Component {
 
   render() {
     const { category, answers, solution, question, trueAnswer, handleNextClick } = this.props;
+    const solutionHtml = {__html: markdown.toHTML(solution)};
     return (
       <Wrapper>
         <h5>{category}</h5>
@@ -66,8 +70,7 @@ class TextQuestion extends React.Component {
           </Answers>
           {this.state.correctAnswered !== null && (
             <div>
-              <h6>Explantation</h6>
-              <p>{solution}</p>
+              <p dangerouslySetInnerHTML={solutionHtml} />
             </div>
           )}
           {this.state.userResponse && (
