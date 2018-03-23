@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: relative;
   height: 100%;
 
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
 

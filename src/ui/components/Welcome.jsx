@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   background-color: #fff;
-  background-image: url(/zourney/images/welcome_screen.jpg);
+  background-image: url(/zourney/images/IntroIntro.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
