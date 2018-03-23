@@ -12,6 +12,93 @@ const Wrapper = styled.div`
   padding: 16px 0 0;
   font-size: 1.2em;
 
+  &.tutorial {
+    > .to-continue {
+      color: #ff89ab;
+    }
+    > .buttons {
+      button {
+        background-color: #ff89ab;
+      }
+    }
+    .tutorial-images {
+      position: relative;
+      transition: height 1s ease;
+      height: 0px;
+      overflow: hidden;
+      span {
+        position: absolute;
+        transition: opacity 1s ease;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 78px;
+        background-repeat: no-repeat;
+        width: 187px;
+        opacity: 0;
+      }
+      .image-1 {
+        top: -90px;
+        right: 30px;
+        background-image: url(/zourney/images/Tutorial01.png);
+      }
+      .image-2 {
+        top: 0;
+        left: 16px;
+        background-image: url(/zourney/images/Tutorial02.png);
+      }
+    }
+  }
+  &.accommodation {
+    > .to-continue {
+      color: #b582cd;
+    }
+    > .buttons {
+      button {
+        background-color: #b582cd;
+      }
+    }
+  }
+  &.paperwork {
+    > .to-continue {
+      color: #7bddaa;
+    }
+    > .buttons {
+      button {
+        background-color: #7bddaa;
+      }
+    }
+  }
+  &.lifestyle {
+    > .to-continue {
+      color: #f3bd75;
+    }
+    > .buttons {
+      button {
+        background-color: #f3bd75;
+      }
+    }
+  }
+  &.zalando {
+    > .to-continue {
+      color: #7fedee;
+    }
+    > .buttons {
+      button {
+        background-color: #7fedee;
+      }
+    }
+  }
+  &.places {
+    > .to-continue {
+      color: #7d92bf;
+    }
+    > .buttons {
+      button {
+        background-color: #7d92bf;
+      }
+    }
+  }
+
   > .question {
     padding: 28px 16px;
   }
@@ -74,6 +161,19 @@ const Wrapper = styled.div`
     color: #b582cd;
   }
 
+  ${props => props.displayTutorial && `
+    &.tutorial {
+      .tutorial-images {
+        height: 72px;
+        overflow: visible;
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  `};
+
   ${props => props.screen === 'M_DEVICE' || props.screen === 'L_DEVICE' && `
     font-size: 2.4em;
 
@@ -114,16 +214,23 @@ class TextQuestion extends React.Component {
   }
 
   render() {
-    const { screen, answers, solution, question, trueAnswer, handleNextClick } = this.props;
+    const { categoryName, screen, answers, solution, question, trueAnswer, handleNextClick } = this.props;
     const solutionHtml = { __html: markdown.toHTML(solution) };
+    const displayTutorial = categoryName.toLowerCase() === 'tutorial' && this.state.userResponse;
+
     return (
-      <Wrapper screen={screen}>
+      <Wrapper displayTutorial={displayTutorial} className={categoryName.toLowerCase()} screen={screen}>
         <div className="question">
           <p>{question}</p>
+        </div>
+        <div className="tutorial-images">
+          <span className="image-1" />
+          <span className="image-2" />
         </div>
         <div className="answers">
           {answers.map((answer, idx) => (
             <TextAnswer
+              category={categoryName.toLowerCase()}
               screen={screen}
               bullet={ABCD[idx]}
               trueAnswer={trueAnswer}
@@ -141,7 +248,7 @@ class TextQuestion extends React.Component {
         )}
         {this.state.userResponse ? (
           <div className="buttons">
-            <button onClick={handleNextClick}>Play next</button>
+            <button onClick={handleNextClick}>{this.props.match.params.category === 'tutorial' ? 'Continue' : 'Play next'}</button>
           </div>
         ) : (
           <div className="to-continue">Select an answer to continue</div>

@@ -5,6 +5,14 @@ import {groupQuestionsByCategory} from '../utils/helper';
 import TextQuestion from './TextQuestion';
 import Header from './Header';
 
+const tutorialQuestion = {
+  category: 'Tutorial',
+  question: 'Do you know how a Quizz Game works?',
+  trueAnswer: 'yes',
+  answers: ['yes','no'],
+  solution: `And if you’re unsure we'll provide a helpful description for you... \n\nNow click "Continue" and enjoy!!`
+};
+
 const Wrapper = styled.div`
   display: block;
   height: 100%;
@@ -19,9 +27,40 @@ const Wrapper = styled.div`
   > .transparent {
     display: block;
     min-height: 100%;
-    background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;
     background-attachment: fixed;
     background-size: cover;
+  }
+
+  &.tutorial {
+    background-image: url(/zourney/images/bgTutorialQuestion.jpeg);
+    .transparent {
+      background-image: linear-gradient(135deg, rgba(255,137,171,0.8) 0%,rgba(124,67,83,0.8) 100%);
+    }
+  }
+  &.accommodation {
+    .transparent {
+      background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);
+    }
+  }
+  &.paperwork {
+    .transparent {
+      background-image: linear-gradient(135deg, rgba(123,221,170,0.8) 0%,rgba(64,114,87,0.8) 100%);
+    }
+  }
+  &.lifestyle {
+    .transparent {
+      background-image: linear-gradient(135deg, rgba(243,189,117,0.8) 0%,rgba(135,105,66,0.8) 100%);
+    }
+  }
+  &.zalando {
+    .transparent {
+      background-image: linear-gradient(135deg, rgba(127,237,238,0.8) 0%,rgba(59,109,109,0.8) 100%);
+    }
+  }
+  &.places {
+    .transparent {
+      background-image: linear-gradient(135deg, rgba(125,146,191,0.8) 0%,rgba(62,72,94,0.8) 100%);
+    }
   }
 `;
 
@@ -32,29 +71,39 @@ class Quiz extends React.Component {
     this.handleNextClick = this.handleNextClick.bind(this);
     const groupedQuestions = groupQuestionsByCategory(props.allQuestions);
     const quizCategory = props.match.params.category;
-    this.state = groupedQuestions;
-    this.state.quizCategory = quizCategory;
+    if (props.match.params.category === 'tutorial') {
+      this.state = {
+        'tutorial': [tutorialQuestion],
+        quizCategory: 'tutorial'
+      }
+    } else {
+      this.state = groupedQuestions;
+      this.state.quizCategory = quizCategory;
+    }
   }
 
   handleNextClick() {
-    const questions = this.state[this.state.quizCategory].slice(1)
+    const {quizCategory} = this.state;
+    if (quizCategory === 'tutorial') {
+      this.props.history.push('../menu');
+      return;
+    }
+    const questions = this.state[quizCategory].slice(1)
     const newState = {};
-    newState[this.state.quizCategory] = questions;
+    newState[quizCategory] = questions;
     this.setState(newState);
   }
 
   render() {
-    const { screen } = this.props;
+    const { screen, match } = this.props;
     const [item] = this.state[this.state.quizCategory];
-    const categoryName = this.props.categories.find(category => (
-      category.toLowerCase() === this.state.quizCategory
-    ));
-
+    const categoryName = this.props.match.params.category;
+    
     return (
-      <Wrapper>
+      <Wrapper className={categoryName.toLowerCase()}>
         <div className="transparent">
           <Header screen={screen} history={this.props.history} categoryName={categoryName} />
-          <TextQuestion screen={screen} history={this.props.history} handleNextClick={this.handleNextClick} {...item} />
+          <TextQuestion categoryName={categoryName} screen={screen} history={this.props.history} match={match} handleNextClick={this.handleNextClick} {...item} />
         </div>
       </Wrapper>
     );

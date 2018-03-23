@@ -22,6 +22,37 @@ const Wrapper = styled.div`
   transition-timing-function: ease-out, ease-out, ease-out;
   transition-property: opacity, max-height, margin;
 
+  &.tutorial {
+    > .bullet {
+      color: #ff89ab;
+    }
+  }
+  &.accommodation {
+    > .bullet {
+      color: #b582cd;
+    }
+  }
+  &.paperwork {
+    > .bullet {
+      color: #7bddaa;
+    }
+  }
+  &.lifestyle {
+    > .bullet {
+      color: #f3bd75;
+    }
+  }
+  &.zalando {
+    > .bullet {
+      color: #7fedee;
+    }
+  }
+  &.places {
+    > .bullet {
+      color: #7d92bf;
+    }
+  }
+
   &:first-child {
     margin: 0 0 8px 0;
   }
@@ -105,12 +136,12 @@ class TextAnswer extends React.Component {
   }
 
   render() {
-    const {screen, bullet, handleAnswerClick, answer } = this.props;
+    const {category, screen, bullet, handleAnswerClick, answer } = this.props;
     if (!this.state.display) {
       return null;
     }
     return (
-      <Wrapper screen={screen} onClick={handleAnswerClick} className={this.state.className}>
+      <Wrapper screen={screen} onClick={handleAnswerClick} className={`${category} ${this.state.className}`}>
         <div className="bullet">{bullet}</div>
         <div className="answer">{answer}</div>
       </Wrapper>

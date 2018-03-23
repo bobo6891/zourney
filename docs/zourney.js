@@ -35102,7 +35102,7 @@ var Welcome = function (_React$Component) {
   _createClass(Welcome, [{
     key: 'handlePlayButton',
     value: function handlePlayButton() {
-      this.props.history.push('./menu');
+      this.props.history.push('./quiz/tutorial');
     }
   }, {
     key: 'render',
@@ -35331,7 +35331,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  height: 100%;\n  overflow: auto;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n\n  > .transparent {\n    display: block;\n    min-height: 100%;\n    background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;\n    background-attachment: fixed;\n    background-size: cover;\n  }\n'], ['\n  display: block;\n  height: 100%;\n  overflow: auto;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n\n  > .transparent {\n    display: block;\n    min-height: 100%;\n    background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);;\n    background-attachment: fixed;\n    background-size: cover;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  height: 100%;\n  overflow: auto;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n\n  > .transparent {\n    display: block;\n    min-height: 100%;\n    background-attachment: fixed;\n    background-size: cover;\n  }\n\n  &.tutorial {\n    background-image: url(/zourney/images/bgTutorialQuestion.jpeg);\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(255,137,171,0.8) 0%,rgba(124,67,83,0.8) 100%);\n    }\n  }\n  &.accommodation {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);\n    }\n  }\n  &.paperwork {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(123,221,170,0.8) 0%,rgba(64,114,87,0.8) 100%);\n    }\n  }\n  &.lifestyle {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(243,189,117,0.8) 0%,rgba(135,105,66,0.8) 100%);\n    }\n  }\n  &.zalando {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(127,237,238,0.8) 0%,rgba(59,109,109,0.8) 100%);\n    }\n  }\n  &.places {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(125,146,191,0.8) 0%,rgba(62,72,94,0.8) 100%);\n    }\n  }\n'], ['\n  display: block;\n  height: 100%;\n  overflow: auto;\n  background-image: url(/zourney/images/background_accomodation.png);\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  color: rgb(255,255,255);\n\n  > .transparent {\n    display: block;\n    min-height: 100%;\n    background-attachment: fixed;\n    background-size: cover;\n  }\n\n  &.tutorial {\n    background-image: url(/zourney/images/bgTutorialQuestion.jpeg);\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(255,137,171,0.8) 0%,rgba(124,67,83,0.8) 100%);\n    }\n  }\n  &.accommodation {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(181,130,205,0.8) 0%,rgba(58,43,66,0.8) 100%);\n    }\n  }\n  &.paperwork {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(123,221,170,0.8) 0%,rgba(64,114,87,0.8) 100%);\n    }\n  }\n  &.lifestyle {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(243,189,117,0.8) 0%,rgba(135,105,66,0.8) 100%);\n    }\n  }\n  &.zalando {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(127,237,238,0.8) 0%,rgba(59,109,109,0.8) 100%);\n    }\n  }\n  &.places {\n    .transparent {\n      background-image: linear-gradient(135deg, rgba(125,146,191,0.8) 0%,rgba(62,72,94,0.8) 100%);\n    }\n  }\n']);
 
 var _react = __webpack_require__(5);
 
@@ -35365,6 +35365,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+var tutorialQuestion = {
+  category: 'Tutorial',
+  question: 'Do you know how a Quizz Game works?',
+  trueAnswer: 'yes',
+  answers: ['yes', 'no'],
+  solution: 'And if you\u2019re unsure we\'ll provide a helpful description for you... \n\nNow click "Continue" and enjoy!!'
+};
+
 var Wrapper = _styledComponents2.default.div(_templateObject);
 
 var Quiz = function (_React$Component) {
@@ -35378,41 +35386,52 @@ var Quiz = function (_React$Component) {
     _this.handleNextClick = _this.handleNextClick.bind(_this);
     var groupedQuestions = (0, _helper.groupQuestionsByCategory)(props.allQuestions);
     var quizCategory = props.match.params.category;
-    _this.state = groupedQuestions;
-    _this.state.quizCategory = quizCategory;
+    if (props.match.params.category === 'tutorial') {
+      _this.state = {
+        'tutorial': [tutorialQuestion],
+        quizCategory: 'tutorial'
+      };
+    } else {
+      _this.state = groupedQuestions;
+      _this.state.quizCategory = quizCategory;
+    }
     return _this;
   }
 
   _createClass(Quiz, [{
     key: 'handleNextClick',
     value: function handleNextClick() {
-      var questions = this.state[this.state.quizCategory].slice(1);
+      var quizCategory = this.state.quizCategory;
+
+      if (quizCategory === 'tutorial') {
+        this.props.history.push('../menu');
+        return;
+      }
+      var questions = this.state[quizCategory].slice(1);
       var newState = {};
-      newState[this.state.quizCategory] = questions;
+      newState[quizCategory] = questions;
       this.setState(newState);
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
-      var screen = this.props.screen;
+      var _props = this.props,
+          screen = _props.screen,
+          match = _props.match;
 
       var _state$state$quizCate = _slicedToArray(this.state[this.state.quizCategory], 1),
           item = _state$state$quizCate[0];
 
-      var categoryName = this.props.categories.find(function (category) {
-        return category.toLowerCase() === _this2.state.quizCategory;
-      });
+      var categoryName = this.props.match.params.category;
 
       return _react2.default.createElement(
         Wrapper,
-        null,
+        { className: categoryName.toLowerCase() },
         _react2.default.createElement(
           'div',
           { className: 'transparent' },
           _react2.default.createElement(_Header2.default, { screen: screen, history: this.props.history, categoryName: categoryName }),
-          _react2.default.createElement(_TextQuestion2.default, _extends({ screen: screen, history: this.props.history, handleNextClick: this.handleNextClick }, item))
+          _react2.default.createElement(_TextQuestion2.default, _extends({ categoryName: categoryName, screen: screen, history: this.props.history, match: match, handleNextClick: this.handleNextClick }, item))
         )
       );
     }
@@ -35441,7 +35460,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  padding: 16px 0 0;\n  font-size: 1.2em;\n\n  > .question {\n    padding: 28px 16px;\n  }\n\n  > .answers {\n    padding: 0 16px;\n    display: flex;\n    justify-content: space-between;\n    align-content: center;\n    flex-wrap: nowrap;\n    flex-direction: column;\n  }\n\n  > .solution {\n    padding: 0 16px;\n    margin: 8px 0;\n    font-size: 0.8em;\n    color: #434343;\n\n    .solution-card {\n      border-radius: 4px;\n      padding: 16px;\n      background-color: #fff;\n      box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.25);\n\n      > *:last-child {\n        margin-bottom: 0;\n      }\n\n      ul {\n        padding-left: 16px;\n      }\n    }\n  }\n\n  > .buttons {\n    margin-top: 16px;\n    text-align: center;\n\n    button {\n      color: #fff;\n      text-shadow: 0 0 4px rgba(0,0,0,0.8);\n      font-weight: 600;\n      font-size: 1.2em;\n      text-transform: uppercase;\n      width: 100%;\n      border: unset;\n      margin: unset;\n      background-color: #b582cd;\n      padding: 4px 16px;\n    }\n  }\n\n  > .to-continue {\n    font-size: 0.8em;\n    padding: 0 16px;\n    position: relative;\n    text-align: center;\n    padding: 8px 0;\n    color: #b582cd;\n  }\n\n  ', ';\n'], ['\n  display: block;\n  padding: 16px 0 0;\n  font-size: 1.2em;\n\n  > .question {\n    padding: 28px 16px;\n  }\n\n  > .answers {\n    padding: 0 16px;\n    display: flex;\n    justify-content: space-between;\n    align-content: center;\n    flex-wrap: nowrap;\n    flex-direction: column;\n  }\n\n  > .solution {\n    padding: 0 16px;\n    margin: 8px 0;\n    font-size: 0.8em;\n    color: #434343;\n\n    .solution-card {\n      border-radius: 4px;\n      padding: 16px;\n      background-color: #fff;\n      box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.25);\n\n      > *:last-child {\n        margin-bottom: 0;\n      }\n\n      ul {\n        padding-left: 16px;\n      }\n    }\n  }\n\n  > .buttons {\n    margin-top: 16px;\n    text-align: center;\n\n    button {\n      color: #fff;\n      text-shadow: 0 0 4px rgba(0,0,0,0.8);\n      font-weight: 600;\n      font-size: 1.2em;\n      text-transform: uppercase;\n      width: 100%;\n      border: unset;\n      margin: unset;\n      background-color: #b582cd;\n      padding: 4px 16px;\n    }\n  }\n\n  > .to-continue {\n    font-size: 0.8em;\n    padding: 0 16px;\n    position: relative;\n    text-align: center;\n    padding: 8px 0;\n    color: #b582cd;\n  }\n\n  ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  padding: 16px 0 0;\n  font-size: 1.2em;\n\n  &.tutorial {\n    > .to-continue {\n      color: #ff89ab;\n    }\n    > .buttons {\n      button {\n        background-color: #ff89ab;\n      }\n    }\n    .tutorial-images {\n      position: relative;\n      transition: height 1s ease;\n      height: 0px;\n      overflow: hidden;\n      span {\n        position: absolute;\n        transition: opacity 1s ease;\n        background-repeat: no-repeat;\n        display: inline-block;\n        height: 78px;\n        background-repeat: no-repeat;\n        width: 187px;\n        opacity: 0;\n      }\n      .image-1 {\n        top: -90px;\n        right: 30px;\n        background-image: url(/zourney/images/Tutorial01.png);\n      }\n      .image-2 {\n        top: 0;\n        left: 16px;\n        background-image: url(/zourney/images/Tutorial02.png);\n      }\n    }\n  }\n  &.accommodation {\n    > .to-continue {\n      color: #b582cd;\n    }\n    > .buttons {\n      button {\n        background-color: #b582cd;\n      }\n    }\n  }\n  &.paperwork {\n    > .to-continue {\n      color: #7bddaa;\n    }\n    > .buttons {\n      button {\n        background-color: #7bddaa;\n      }\n    }\n  }\n  &.lifestyle {\n    > .to-continue {\n      color: #f3bd75;\n    }\n    > .buttons {\n      button {\n        background-color: #f3bd75;\n      }\n    }\n  }\n  &.zalando {\n    > .to-continue {\n      color: #7fedee;\n    }\n    > .buttons {\n      button {\n        background-color: #7fedee;\n      }\n    }\n  }\n  &.places {\n    > .to-continue {\n      color: #7d92bf;\n    }\n    > .buttons {\n      button {\n        background-color: #7d92bf;\n      }\n    }\n  }\n\n  > .question {\n    padding: 28px 16px;\n  }\n\n  > .answers {\n    padding: 0 16px;\n    display: flex;\n    justify-content: space-between;\n    align-content: center;\n    flex-wrap: nowrap;\n    flex-direction: column;\n  }\n\n  > .solution {\n    padding: 0 16px;\n    margin: 8px 0;\n    font-size: 0.8em;\n    color: #434343;\n\n    .solution-card {\n      border-radius: 4px;\n      padding: 16px;\n      background-color: #fff;\n      box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.25);\n\n      > *:last-child {\n        margin-bottom: 0;\n      }\n\n      ul {\n        padding-left: 16px;\n      }\n    }\n  }\n\n  > .buttons {\n    margin-top: 16px;\n    text-align: center;\n\n    button {\n      color: #fff;\n      text-shadow: 0 0 4px rgba(0,0,0,0.8);\n      font-weight: 600;\n      font-size: 1.2em;\n      text-transform: uppercase;\n      width: 100%;\n      border: unset;\n      margin: unset;\n      background-color: #b582cd;\n      padding: 4px 16px;\n    }\n  }\n\n  > .to-continue {\n    font-size: 0.8em;\n    padding: 0 16px;\n    position: relative;\n    text-align: center;\n    padding: 8px 0;\n    color: #b582cd;\n  }\n\n  ', ';\n\n  ', ';\n'], ['\n  display: block;\n  padding: 16px 0 0;\n  font-size: 1.2em;\n\n  &.tutorial {\n    > .to-continue {\n      color: #ff89ab;\n    }\n    > .buttons {\n      button {\n        background-color: #ff89ab;\n      }\n    }\n    .tutorial-images {\n      position: relative;\n      transition: height 1s ease;\n      height: 0px;\n      overflow: hidden;\n      span {\n        position: absolute;\n        transition: opacity 1s ease;\n        background-repeat: no-repeat;\n        display: inline-block;\n        height: 78px;\n        background-repeat: no-repeat;\n        width: 187px;\n        opacity: 0;\n      }\n      .image-1 {\n        top: -90px;\n        right: 30px;\n        background-image: url(/zourney/images/Tutorial01.png);\n      }\n      .image-2 {\n        top: 0;\n        left: 16px;\n        background-image: url(/zourney/images/Tutorial02.png);\n      }\n    }\n  }\n  &.accommodation {\n    > .to-continue {\n      color: #b582cd;\n    }\n    > .buttons {\n      button {\n        background-color: #b582cd;\n      }\n    }\n  }\n  &.paperwork {\n    > .to-continue {\n      color: #7bddaa;\n    }\n    > .buttons {\n      button {\n        background-color: #7bddaa;\n      }\n    }\n  }\n  &.lifestyle {\n    > .to-continue {\n      color: #f3bd75;\n    }\n    > .buttons {\n      button {\n        background-color: #f3bd75;\n      }\n    }\n  }\n  &.zalando {\n    > .to-continue {\n      color: #7fedee;\n    }\n    > .buttons {\n      button {\n        background-color: #7fedee;\n      }\n    }\n  }\n  &.places {\n    > .to-continue {\n      color: #7d92bf;\n    }\n    > .buttons {\n      button {\n        background-color: #7d92bf;\n      }\n    }\n  }\n\n  > .question {\n    padding: 28px 16px;\n  }\n\n  > .answers {\n    padding: 0 16px;\n    display: flex;\n    justify-content: space-between;\n    align-content: center;\n    flex-wrap: nowrap;\n    flex-direction: column;\n  }\n\n  > .solution {\n    padding: 0 16px;\n    margin: 8px 0;\n    font-size: 0.8em;\n    color: #434343;\n\n    .solution-card {\n      border-radius: 4px;\n      padding: 16px;\n      background-color: #fff;\n      box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.25);\n\n      > *:last-child {\n        margin-bottom: 0;\n      }\n\n      ul {\n        padding-left: 16px;\n      }\n    }\n  }\n\n  > .buttons {\n    margin-top: 16px;\n    text-align: center;\n\n    button {\n      color: #fff;\n      text-shadow: 0 0 4px rgba(0,0,0,0.8);\n      font-weight: 600;\n      font-size: 1.2em;\n      text-transform: uppercase;\n      width: 100%;\n      border: unset;\n      margin: unset;\n      background-color: #b582cd;\n      padding: 4px 16px;\n    }\n  }\n\n  > .to-continue {\n    font-size: 0.8em;\n    padding: 0 16px;\n    position: relative;\n    text-align: center;\n    padding: 8px 0;\n    color: #b582cd;\n  }\n\n  ', ';\n\n  ', ';\n']);
 
 var _react = __webpack_require__(5);
 
@@ -35478,6 +35497,8 @@ var markdown = _markdown2.default.markdown;
 var ABCD = ['A', 'B', 'C', 'D'];
 
 var Wrapper = _styledComponents2.default.div(_templateObject, function (props) {
+  return props.displayTutorial && '\n    &.tutorial {\n      .tutorial-images {\n        height: 72px;\n        overflow: visible;\n\n        span {\n          opacity: 1;\n        }\n      }\n    }\n  ';
+}, function (props) {
   return props.screen === 'M_DEVICE' || props.screen === 'L_DEVICE' && '\n    font-size: 2.4em;\n\n    > .solution {\n      .solution-card {\n        ul {\n          padding-left: 32px;\n        }\n      }\n    }\n  ';
 });
 
@@ -35521,6 +35542,7 @@ var TextQuestion = function (_React$Component) {
       var _this2 = this;
 
       var _props = this.props,
+          categoryName = _props.categoryName,
           screen = _props.screen,
           answers = _props.answers,
           solution = _props.solution,
@@ -35529,9 +35551,11 @@ var TextQuestion = function (_React$Component) {
           handleNextClick = _props.handleNextClick;
 
       var solutionHtml = { __html: markdown.toHTML(solution) };
+      var displayTutorial = categoryName.toLowerCase() === 'tutorial' && this.state.userResponse;
+
       return _react2.default.createElement(
         Wrapper,
-        { screen: screen },
+        { displayTutorial: displayTutorial, className: categoryName.toLowerCase(), screen: screen },
         _react2.default.createElement(
           'div',
           { className: 'question' },
@@ -35543,9 +35567,16 @@ var TextQuestion = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
+          { className: 'tutorial-images' },
+          _react2.default.createElement('span', { className: 'image-1' }),
+          _react2.default.createElement('span', { className: 'image-2' })
+        ),
+        _react2.default.createElement(
+          'div',
           { className: 'answers' },
           answers.map(function (answer, idx) {
             return _react2.default.createElement(_TextAnswer2.default, {
+              category: categoryName.toLowerCase(),
               screen: screen,
               bullet: ABCD[idx],
               trueAnswer: trueAnswer,
@@ -35567,7 +35598,7 @@ var TextQuestion = function (_React$Component) {
           _react2.default.createElement(
             'button',
             { onClick: handleNextClick },
-            'Play next'
+            this.props.match.params.category === 'tutorial' ? 'Continue' : 'Play next'
           )
         ) : _react2.default.createElement(
           'div',
@@ -38168,7 +38199,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  padding: 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  max-height: 300px;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n  margin: 8px 0;\n  color: #434343;\n  overflow: hidden;\n  transition-delay: 0s, 0s, 0.1s;\n  transition-duration: 1s, 1s, 1s;\n  transition-timing-function: ease-out, ease-out, ease-out;\n  transition-property: opacity, max-height, margin;\n\n  &:first-child {\n    margin: 0 0 8px 0;\n  }\n\n  &:hover {\n    .answer {\n      background-color: #c4c4c4;\n      cursor: pointer;\n    }\n  }\n\n  &.correct {\n    .answer {\n      background-color: #b5dd7a;\n    }\n  }\n\n  &.wrong {\n    .answer {\n      background-color: #ff89ab;\n    }\n  }\n\n  &.slide-out {\n    max-height: 0px;\n    margin: 0px;\n  }\n\n  &.fade-out {\n    opacity: 0;\n  }\n\n  > .bullet {\n    padding: 16px;\n    color: #b582cd;\n    font-weight: 400;\n  }\n\n  > .answer {\n    padding: 16px 16px 16px 8px;\n    display: block;\n    flex: 1;\n  }\n'], ['\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  padding: 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  max-height: 300px;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n  margin: 8px 0;\n  color: #434343;\n  overflow: hidden;\n  transition-delay: 0s, 0s, 0.1s;\n  transition-duration: 1s, 1s, 1s;\n  transition-timing-function: ease-out, ease-out, ease-out;\n  transition-property: opacity, max-height, margin;\n\n  &:first-child {\n    margin: 0 0 8px 0;\n  }\n\n  &:hover {\n    .answer {\n      background-color: #c4c4c4;\n      cursor: pointer;\n    }\n  }\n\n  &.correct {\n    .answer {\n      background-color: #b5dd7a;\n    }\n  }\n\n  &.wrong {\n    .answer {\n      background-color: #ff89ab;\n    }\n  }\n\n  &.slide-out {\n    max-height: 0px;\n    margin: 0px;\n  }\n\n  &.fade-out {\n    opacity: 0;\n  }\n\n  > .bullet {\n    padding: 16px;\n    color: #b582cd;\n    font-weight: 400;\n  }\n\n  > .answer {\n    padding: 16px 16px 16px 8px;\n    display: block;\n    flex: 1;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  padding: 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  max-height: 300px;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n  margin: 8px 0;\n  color: #434343;\n  overflow: hidden;\n  transition-delay: 0s, 0s, 0.1s;\n  transition-duration: 1s, 1s, 1s;\n  transition-timing-function: ease-out, ease-out, ease-out;\n  transition-property: opacity, max-height, margin;\n\n  &.tutorial {\n    > .bullet {\n      color: #ff89ab;\n    }\n  }\n  &.accommodation {\n    > .bullet {\n      color: #b582cd;\n    }\n  }\n  &.paperwork {\n    > .bullet {\n      color: #7bddaa;\n    }\n  }\n  &.lifestyle {\n    > .bullet {\n      color: #f3bd75;\n    }\n  }\n  &.zalando {\n    > .bullet {\n      color: #7fedee;\n    }\n  }\n  &.places {\n    > .bullet {\n      color: #7d92bf;\n    }\n  }\n\n  &:first-child {\n    margin: 0 0 8px 0;\n  }\n\n  &:hover {\n    .answer {\n      background-color: #c4c4c4;\n      cursor: pointer;\n    }\n  }\n\n  &.correct {\n    .answer {\n      background-color: #b5dd7a;\n    }\n  }\n\n  &.wrong {\n    .answer {\n      background-color: #ff89ab;\n    }\n  }\n\n  &.slide-out {\n    max-height: 0px;\n    margin: 0px;\n  }\n\n  &.fade-out {\n    opacity: 0;\n  }\n\n  > .bullet {\n    padding: 16px;\n    color: #b582cd;\n    font-weight: 400;\n  }\n\n  > .answer {\n    padding: 16px 16px 16px 8px;\n    display: block;\n    flex: 1;\n  }\n'], ['\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  padding: 0;\n  font-size: 0.8em;\n  border-radius: 4px;\n  max-height: 300px;\n  background-color: #fff;\n  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.25);\n  margin: 8px 0;\n  color: #434343;\n  overflow: hidden;\n  transition-delay: 0s, 0s, 0.1s;\n  transition-duration: 1s, 1s, 1s;\n  transition-timing-function: ease-out, ease-out, ease-out;\n  transition-property: opacity, max-height, margin;\n\n  &.tutorial {\n    > .bullet {\n      color: #ff89ab;\n    }\n  }\n  &.accommodation {\n    > .bullet {\n      color: #b582cd;\n    }\n  }\n  &.paperwork {\n    > .bullet {\n      color: #7bddaa;\n    }\n  }\n  &.lifestyle {\n    > .bullet {\n      color: #f3bd75;\n    }\n  }\n  &.zalando {\n    > .bullet {\n      color: #7fedee;\n    }\n  }\n  &.places {\n    > .bullet {\n      color: #7d92bf;\n    }\n  }\n\n  &:first-child {\n    margin: 0 0 8px 0;\n  }\n\n  &:hover {\n    .answer {\n      background-color: #c4c4c4;\n      cursor: pointer;\n    }\n  }\n\n  &.correct {\n    .answer {\n      background-color: #b5dd7a;\n    }\n  }\n\n  &.wrong {\n    .answer {\n      background-color: #ff89ab;\n    }\n  }\n\n  &.slide-out {\n    max-height: 0px;\n    margin: 0px;\n  }\n\n  &.fade-out {\n    opacity: 0;\n  }\n\n  > .bullet {\n    padding: 16px;\n    color: #b582cd;\n    font-weight: 400;\n  }\n\n  > .answer {\n    padding: 16px 16px 16px 8px;\n    display: block;\n    flex: 1;\n  }\n']);
 
 var _react = __webpack_require__(5);
 
@@ -38248,6 +38279,7 @@ var TextAnswer = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
+          category = _props.category,
           screen = _props.screen,
           bullet = _props.bullet,
           handleAnswerClick = _props.handleAnswerClick,
@@ -38258,7 +38290,7 @@ var TextAnswer = function (_React$Component) {
       }
       return _react2.default.createElement(
         Wrapper,
-        { screen: screen, onClick: handleAnswerClick, className: this.state.className },
+        { screen: screen, onClick: handleAnswerClick, className: category + ' ' + this.state.className },
         _react2.default.createElement(
           'div',
           { className: 'bullet' },
@@ -38298,7 +38330,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  background-color: rgb(255, 255, 255);\n  text-align: center;\n  padding: 16px 0 8px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n\n  > button {\n    position: relative;\n    height: 48px;\n    width: 48px;\n    background-color: unset;\n    border: unset;\n    padding: 0;\n    margin: 0;\n    background-image: url(/zourney/images/icons/chevron-left.svg);\n    background-repeat: no-repeat;\n    background-size: 48px;\n  }\n\n  > .text {\n    text-align: center;\n    display: block;\n    flex: 1;\n    margin-left: -48px;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n\n  ', '\n'], ['\n  background-color: rgb(255, 255, 255);\n  text-align: center;\n  padding: 16px 0 8px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n\n  > button {\n    position: relative;\n    height: 48px;\n    width: 48px;\n    background-color: unset;\n    border: unset;\n    padding: 0;\n    margin: 0;\n    background-image: url(/zourney/images/icons/chevron-left.svg);\n    background-repeat: no-repeat;\n    background-size: 48px;\n  }\n\n  > .text {\n    text-align: center;\n    display: block;\n    flex: 1;\n    margin-left: -48px;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n\n  ', '\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  background-color: rgb(255, 255, 255);\n  text-align: center;\n  padding: 16px 0 8px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n\n  > button {\n    position: relative;\n    height: 48px;\n    width: 48px;\n    background-color: unset;\n    border: unset;\n    padding: 0;\n    margin: 0;\n    background-image: url(/zourney/images/icons/chevron-left.svg);\n    background-repeat: no-repeat;\n    background-size: 48px;\n  }\n\n  &.tutoria; {\n    > .text {\n      p {\n        color: #ff89ab;\n      }\n    }\n  }\n  &.accommodation {\n    > .text {\n      p {\n        color: #b582cd;\n      }\n    }\n  }\n  &.paperwork {\n    > .text {\n      p {\n        color: #7bddaa;\n      }\n    }\n  }\n  &.lifestyle {\n    > .text {\n      p {\n        color: #f3bd75;\n      }\n    }\n  }\n  &.zalando {\n    > .text {\n      p {\n        color: #7fedee;\n      }\n    }\n  }\n  &.places {\n    > .text {\n      p {\n        color: #7d92bf;\n      }\n    }\n  }\n\n  > .text {\n    text-align: center;\n    display: block;\n    flex: 1;\n    margin-left: -48px;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n\n  ', '\n'], ['\n  background-color: rgb(255, 255, 255);\n  text-align: center;\n  padding: 16px 0 8px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  flex-wrap: nowrap;\n  flex-direction: row;\n\n  > button {\n    position: relative;\n    height: 48px;\n    width: 48px;\n    background-color: unset;\n    border: unset;\n    padding: 0;\n    margin: 0;\n    background-image: url(/zourney/images/icons/chevron-left.svg);\n    background-repeat: no-repeat;\n    background-size: 48px;\n  }\n\n  &.tutoria; {\n    > .text {\n      p {\n        color: #ff89ab;\n      }\n    }\n  }\n  &.accommodation {\n    > .text {\n      p {\n        color: #b582cd;\n      }\n    }\n  }\n  &.paperwork {\n    > .text {\n      p {\n        color: #7bddaa;\n      }\n    }\n  }\n  &.lifestyle {\n    > .text {\n      p {\n        color: #f3bd75;\n      }\n    }\n  }\n  &.zalando {\n    > .text {\n      p {\n        color: #7fedee;\n      }\n    }\n  }\n  &.places {\n    > .text {\n      p {\n        color: #7d92bf;\n      }\n    }\n  }\n\n  > .text {\n    text-align: center;\n    display: block;\n    flex: 1;\n    margin-left: -48px;\n    h6 {\n      font-weight: 300;\n      color: #434343;\n    }\n\n    p {\n      margin: 0;\n      font-size: 0.8em;\n      color: #b582cd;\n    }\n  }\n\n  ', '\n']);
 
 var _react = __webpack_require__(5);
 
@@ -38353,7 +38385,7 @@ var Header = function (_React$Component) {
 
       return _react2.default.createElement(
         Wrapper,
-        { screen: screen },
+        { className: categoryName.toLowerCase(), screen: screen },
         _react2.default.createElement('button', { onClick: this.handleBackButton }),
         _react2.default.createElement(
           'div',

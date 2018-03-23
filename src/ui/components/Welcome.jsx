@@ -55,7 +55,7 @@ class Welcome extends React.Component {
   }
 
   handlePlayButton() {
-    this.props.history.push('./menu');
+    this.props.history.push('./quiz/tutorial');
   }
 
   render() {

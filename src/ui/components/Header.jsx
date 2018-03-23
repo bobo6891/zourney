@@ -25,6 +25,49 @@ const Wrapper = styled.div`
     background-size: 48px;
   }
 
+  &.tutoria; {
+    > .text {
+      p {
+        color: #ff89ab;
+      }
+    }
+  }
+  &.accommodation {
+    > .text {
+      p {
+        color: #b582cd;
+      }
+    }
+  }
+  &.paperwork {
+    > .text {
+      p {
+        color: #7bddaa;
+      }
+    }
+  }
+  &.lifestyle {
+    > .text {
+      p {
+        color: #f3bd75;
+      }
+    }
+  }
+  &.zalando {
+    > .text {
+      p {
+        color: #7fedee;
+      }
+    }
+  }
+  &.places {
+    > .text {
+      p {
+        color: #7d92bf;
+      }
+    }
+  }
+
   > .text {
     text-align: center;
     display: block;
@@ -62,7 +105,7 @@ class Header extends React.Component {
   render() {
     const { screen, categoryName } = this.props;
     return (
-      <Wrapper screen={screen}>
+      <Wrapper className={categoryName.toLowerCase()}screen={screen}>
         <button onClick={this.handleBackButton} />
         <div className="text">
           <h6>{categoryName} trivia</h6>
