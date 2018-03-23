@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+   <title>Google Maps, No Country or Province Labels Example Style</title> 
+   <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script> 
+</head> 
+<body> 
+   <div id="map" style="width: 750px; height: 500px;"></div> 
+
+   <script type="text/javascript"> 
+
+   var myLatlng = new google.maps.LatLng(52.485, 13.3928533);
+
+   var myStyle = [
+	{
+	   featureType: 'road',
+           elementType: 'geometry',
+           stylers: [ {color: '#ffffff'} ]
+        },
+        {
+           featureType: 'road.arterial',
+           elementType: 'labels.text.fill',
+           stylers: [ {color: '#757575'} ]
+        },
+  	{
+	   featureType: "administrative",
+	   elementType: "labels",
+	   elementType: "geometry.stroke",
+	   stylers: [ { visibility: "on" } ]
+  	}, {
+    	   featureType: "administrative",
+    	   elementType: "geometry.stroke",
+     	   stylers: [ { visibility: "on" } ]
+  	},{
+    	   featureType: "landscape",
+    	   elementType: "labels",
+	   stylers: [ { visibility: "off " } ]
+  	},{
+    	   featureType: "poi",
+	   elementType: "labels",
+	   stylers: [ { visibility: "off" } ]
+  	},{
+    	   featureType: "road",
+    	   elementType: "labels",
+    	   stylers: [ { visibility: "off" } ]
+  	},{
+    	  featureType: "transit",
+    	  elementType: "labels",
+    	  stylers: [ { visibility: "on" } ]
+  	},{
+	  featureType: "transit",
+    	  elementType: "geometry",
+    	  stylers: [ { visibility: "on" } ]
+  	}, { 
+	  featureType: "water",
+    	  elementType: "labels",
+    	  stylers: [ { visibility: "off" } ]
+  	}
+     ]
+
+     var map = new google.maps.Map(document.getElementById('map'), {
+       mapTypeControlOptions: {
+         mapTypeIds: ['mystyle', google.maps.MapTypeId.TERRAIN]
+       },
+       center: new google.maps.LatLng(52.5066548, 13.3926988),
+       zoom: 11.90		,
+       mapTypeId: 'mystyle'
+     });
+
+   var BCSLatlng = new google.maps.LatLng(52.5066548, 13.3926988);
+   var BMOLatlng = new google.maps.LatLng(52.5263487, 13.4159428);
+   var BM1Latlng = new google.maps.LatLng(52.5054034, 13.4398896);
+   var BMZLatlng = new google.maps.LatLng(52.5041783, 13.444247);
+   var ZCCLatlng = new google.maps.LatLng(52.51004, 13.3824501);
+   var OutletLatlng = new google.maps.LatLng(52.5056443, 13.4330137);	
+
+     var BCSmarker = new google.maps.Marker({
+	position: BCSLatlng,
+	map: map,
+	title: 'Zalando Tech Tower - BCS - Digital Foundation is found her'
+     });
+
+     var BMOmarker = new google.maps.Marker({
+	position: BMOLatlng,
+	map: map,
+	title: 'Zalando Tech headquarter at Alexanderplatz'
+     });
+     var BM1marker = new google.maps.Marker({
+	position: BM1Latlng,
+	map: map,
+	title: 'Zalando head office'
+     });
+     var BMZmarker = new google.maps.Marker({
+	position: BMZLatlng,
+	map: map,
+	title: 'Zalando Damar Tansh Street - tech development'
+     });
+     var ZCCmarker = new google.maps.Marker({
+	position: ZCCLatlng,
+	map: map,
+	title: 'Zalando European customer care centre'
+     });
+     var OutLetmarker = new google.maps.Marker({
+	position: OutletLatlng,
+	map: map,
+	title: 'Zalando Berlin outlet'
+    });
+
+
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+     map.mapTypes.set('mystyle', new google.maps.StyledMapType(myStyle, { name: 'My Style' }));
+   </script> 
+
+
+</body> 
+</html>
