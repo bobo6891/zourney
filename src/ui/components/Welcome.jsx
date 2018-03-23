@@ -69,11 +69,4 @@ class Welcome extends React.Component {
   }
 }
 
-// Welcome.propTypes = {
-//   answer: PropTypes.string.isRequired,
-//   handleAnswerClick: PropTypes.func.isRequired,
-//   trueAnswer: PropTypes.string.isRequired,
-//   userResponse: PropTypes.string
-// };
-
 export default Welcome;

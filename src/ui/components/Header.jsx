@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     background-size: 48px;
   }
 
-  &.tutoria; {
+  &.tutorial {
     > .text {
       p {
         color: #ff89ab;
@@ -105,11 +105,13 @@ class Header extends React.Component {
   render() {
     const { screen, categoryName } = this.props;
     return (
-      <Wrapper className={categoryName.toLowerCase()}screen={screen}>
+      <Wrapper className={categoryName.toLowerCase()} screen={screen}>
         <button onClick={this.handleBackButton} />
         <div className="text">
-          <h6>{categoryName} trivia</h6>
-          <p>Question 4</p>
+          <h6>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h6>
+          {categoryName.toLowerCase() !== 'tutorial' && (
+            <p>Question 4</p>
+          )}
         </div>
       </Wrapper>
     );
