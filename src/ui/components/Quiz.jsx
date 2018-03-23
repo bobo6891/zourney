@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import {groupQuestionsByCategory} from '../utils/helper';
 import TextQuestion from './TextQuestion';
 import Header from './Header';
+import Award from './Award';
 
 const tutorialQuestion = {
   category: 'Tutorial',
-  question: 'Do you know how a Quizz Game works?',
+  question: 'Do you know how a Quiz Game works?',
   trueAnswer: 'yes',
   answers: ['yes','no'],
-  solution: `And if you’re unsure we'll provide a helpful description for you... \n\nNow click "Continue" and enjoy!!`
+  solution: `And if you are unsure we will provide a helpful description for you... \n\nNow click "CONTINUE" and enjoy!!`
 };
 
 const Wrapper = styled.div`
@@ -85,19 +86,26 @@ class Quiz extends React.Component {
   handleNextClick() {
     const {quizCategory} = this.state;
     if (quizCategory === 'tutorial') {
-      this.props.history.push('../menu');
+      this.setState({
+        tutorial: [],
+        showAward: true
+      });
       return;
     }
     const questions = this.state[quizCategory].slice(1)
-    const newState = {};
+    const newState = {showAward: !questions.length};
     newState[quizCategory] = questions;
     this.setState(newState);
   }
 
   render() {
+    const categoryName = this.props.match.params.category;
+    if (this.state.showAward) {
+      return <Award history={this.props.history} category={categoryName.toLowerCase()} />;
+    }
+
     const { screen, match } = this.props;
     const [item] = this.state[this.state.quizCategory];
-    const categoryName = this.props.match.params.category;
     
     return (
       <Wrapper className={categoryName.toLowerCase()}>
