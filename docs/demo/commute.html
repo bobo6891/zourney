@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html> 
-<head> 
-   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
-   <title>Google Maps, No Country or Province Labels Example Style</title> 
-   <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script> 
-</head> 
-<body> 
-   <div id="map" style="width: 750px; height: 500px;"></div> 
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <title>Google Maps, No Country or Province Labels Example Style</title>
+   <script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+</head>
+<body>
+   <div id="map" style="width: 750px; height: 500px;"></div>
 
-   <script type="text/javascript"> 
+   <script type="text/javascript">
 
    var myLatlng = new google.maps.LatLng(52.485, 13.3928533);
 
@@ -52,7 +52,7 @@
 	  featureType: "transit",
     	  elementType: "geometry",
     	  stylers: [ { visibility: "on" } ]
-  	}, { 
+  	}, {
 	  featureType: "water",
     	  elementType: "labels",
     	  stylers: [ { visibility: "off" } ]
@@ -73,7 +73,7 @@
    var BM1Latlng = new google.maps.LatLng(52.5054034, 13.4398896);
    var BMZLatlng = new google.maps.LatLng(52.5041783, 13.444247);
    var ZCCLatlng = new google.maps.LatLng(52.51004, 13.3824501);
-   var OutletLatlng = new google.maps.LatLng(52.5056443, 13.4330137);	
+   var OutletLatlng = new google.maps.LatLng(52.5056443, 13.4330137);
 
      var BCSmarker = new google.maps.Marker({
 	position: BCSLatlng,
@@ -112,8 +112,8 @@
         transitLayer.setMap(map);
 
      map.mapTypes.set('mystyle', new google.maps.StyledMapType(myStyle, { name: 'My Style' }));
-   </script> 
+   </script>
 
 
-</body> 
+</body>
 </html>
