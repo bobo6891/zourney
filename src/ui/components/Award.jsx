@@ -11,11 +11,11 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
 
   &.tutorial {
-    background-image: url(/zourney/images/rewardTutorial.png);
+    background-image: url(/zourney/images/reward-tutorial.png);
   }
 
   &.accommodation {
-    background-image: url(/zourney/images/rewardAccommodation.png);
+    background-image: url(/zourney/images/reward-accommodation.png);
   }
   
   > .buttons {
